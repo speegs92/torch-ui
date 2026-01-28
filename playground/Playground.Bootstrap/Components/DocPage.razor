@@ -1,0 +1,15 @@
+﻿<h1>Buttons</h1>
+
+<Interjection>
+	<strong>NOTE:</strong> If an example exists in the Bootstrap docs but not on this page, it is not currently supported. You should still be able to manually create the Bootstrap example manually using a combination of CSS classes and attributes, as normal.
+</Interjection>
+
+@ChildContent
+
+@code {
+	[Parameter]
+    public required string Title { get; set; }
+
+	[Parameter]
+    public required RenderFragment ChildContent { get; set; }
+}
