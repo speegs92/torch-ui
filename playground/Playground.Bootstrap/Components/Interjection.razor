@@ -1,0 +1,16 @@
+﻿<div
+	class="@($"{Color.GetBgColorClass()}-subtle {Color.GetTextColorClass()}-emphasis my-5 p-4 border-{Color.ToString().ToLowerInvariant()} border-start border-5")">
+	<p class="mb-0">
+		@ChildContent
+	</p>
+</div>
+
+@code {
+
+	[Parameter]
+	public ThemeColor Color { get; set; } = ThemeColor.Info;
+
+	[Parameter]
+	public required RenderFragment ChildContent { get; set; }
+
+}
