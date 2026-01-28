@@ -5,26 +5,5 @@
 <h1>Bootstrap playground</h1>
 
 <p>
-	Please select one of the pages below to get started.
+	Please select one of the pages to the left to get started.
 </p>
-
-<ul class="list-unstyled">
-	@foreach (var page in _pages)
-	{
-		<li>
-			<a
-				href="@($"/{page}")"
-				class="text-capitalize d-block py-1">
-				@(page)
-			</a>
-		</li>
-	}
-</ul>
-
-@code {
-
-	private readonly string[] _pages = [
-		"buttons"
-	];
-
-}

@@ -1,5 +1,45 @@
-﻿@inherits LayoutComponentBase
+﻿@using System.Text.RegularExpressions
+@inherits LayoutComponentBase
 
-<Container style="max-width: 768px">
-	@Body
+<Container Fluid>
+	<Row>
+		<Column
+			Xs="2"
+			Tag="nav">
+			<ul class="list-unstyled">
+				@foreach (var page in _pages)
+				{
+					<li>
+						<a
+							href="@($"/{Slugify(page)}")"
+							class="text-capitalize d-block py-1">
+							@(page)
+						</a>
+					</li>
+				}
+			</ul>
+		</Column>
+
+		<Column Xs="10">
+			<Container
+				class="py-5"
+				style="max-width: 768px">
+				@Body
+			</Container>
+		</Column>
+	</Row>
 </Container>
+
+@code {
+
+	private readonly string[] _pages = [
+		"buttons",
+		"button groups"
+	];
+
+	private static string Slugify(string input)
+	{
+		return new Regex("\\s").Replace(input, "-");
+	}
+
+}
