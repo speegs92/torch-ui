@@ -27,16 +27,9 @@ public class Badge : TorchComponentBase
 	}
 
 	/// <inheritdoc />
-	protected override void OnInitialized()
-	{
-		CssBuilder.AddClass("badge");
-
-		base.OnInitialized();
-	}
-
-	/// <inheritdoc />
 	protected override void SetupAttributes()
 	{
+		CssBuilder.AddClass("badge");
 		CssBuilder.AddClass(Color.GetThemeColorClass("text-bg"));
 
 		if (Pill)
