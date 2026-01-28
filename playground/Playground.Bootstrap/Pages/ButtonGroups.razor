@@ -1,0 +1,113 @@
+﻿@page "/button-groups"
+@using static TorchUI.Bootstrap.ThemeColor
+@using static TorchUI.Bootstrap.Size
+
+<DocPage Title="Button groups">
+	<DocSection
+		Subpath="components/button-group/#basic-example"
+		Title="Basic example">
+		<ButtonGroup Label="Basic example">
+			<Button Color="Primary">Left</Button>
+			<Button Color="Primary">Middle</Button>
+			<Button Color="Primary">Right</Button>
+		</ButtonGroup>
+
+		<Interjection>
+			<strong>FYI:</strong> You can either provide the <code>Label</code> parameter or directly supply the <code>aria-label</code> if you prefer. An existing <code>aria-label</code> will take precedence over the <code>Label</code> parameter, so you won't accidentally overwrite your <code>aria-label</code>.
+		</Interjection>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/button-group/#mixed-styles"
+		Title="Mixed styles">
+		<ButtonGroup Label="Basic mixed styles example">
+			<Button Color="Danger">Left</Button>
+			<Button Color="Warning">Middle</Button>
+			<Button Color="Success">Right</Button>
+		</ButtonGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/button-group/#outlined-styles"
+		Title="Outlined styles">
+		<ButtonGroup>
+			<Button Color="Primary" Outlined>Left</Button>
+			<Button Color="Primary" Outlined>Middle</Button>
+			<Button Color="Primary" Outlined>Right</Button>
+		</ButtonGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/button-group/#button-toolbar"
+		Title="Button toolbar">
+		<ButtonToolbar>
+			<ButtonGroup
+				Label="First group"
+				class="me-2">
+				<Button Color="Primary">1</Button>
+				<Button Color="Primary">2</Button>
+				<Button Color="Primary">3</Button>
+				<Button Color="Primary">4</Button>
+			</ButtonGroup>
+
+			<ButtonGroup
+				Label="Second group"
+				class="me-2">
+				<Button Color="Secondary">5</Button>
+				<Button Color="Secondary">6</Button>
+				<Button Color="Secondary">7</Button>
+			</ButtonGroup>
+
+			<ButtonGroup Label="Third group">
+				<Button Color="Info">8</Button>
+			</ButtonGroup>
+		</ButtonToolbar>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/button-group/#sizing"
+		Title="Sizing">
+		<ButtonGroup
+			Size="Large"
+			Label="Large button group"
+			class="my-1">
+			<Button Color="Primary" Outlined>Left</Button>
+			<Button Color="Primary" Outlined>Middle</Button>
+			<Button Color="Primary" Outlined>Right</Button>
+		</ButtonGroup><br/>
+
+		<ButtonGroup
+			Label="Default button group"
+			class="my-1">
+			<Button Color="Primary" Outlined>Left</Button>
+			<Button Color="Primary" Outlined>Middle</Button>
+			<Button Color="Primary" Outlined>Right</Button>
+		</ButtonGroup><br/>
+
+		<ButtonGroup
+			Size="Small"
+			Label="Small button group"
+			class="my-1">
+			<Button Color="Primary" Outlined>Left</Button>
+			<Button Color="Primary" Outlined>Middle</Button>
+			<Button Color="Primary" Outlined>Right</Button>
+		</ButtonGroup>
+
+		<Interjection>
+			<strong>Be aware:</strong> you can explicitly supply <code>Size="Size.Medium"</code> if you wish, but this value is ignored if present.
+		</Interjection>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/button-group/#vertical-variation"
+		Title="Vertical variation">
+		<ButtonGroup
+			Label="Vertical button group"
+			Vertical>
+			<Button Color="Primary">Button</Button>
+			<Button Color="Primary">Button</Button>
+			<Button Color="Primary">Button</Button>
+			<Button Color="Primary">Button</Button>
+		</ButtonGroup>
+	</DocSection>
+</DocPage>
