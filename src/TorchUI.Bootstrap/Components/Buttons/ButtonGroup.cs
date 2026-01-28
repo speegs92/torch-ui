@@ -24,10 +24,17 @@ public class ButtonGroup : TorchComponentBase
 	[Parameter]
 	public Size Size { get; set; } = Size.Medium;
 
+	/// <summary>
+	/// Whether the button group should be vertical
+	/// </summary>
+	[Parameter]
+	public bool Vertical { get; set; }
+
 	/// <inheritdoc />
 	protected override void SetupAttributes()
 	{
-		CssBuilder.AddClass("btn-group");
+		CssBuilder.AddClass("btn-group", !Vertical);
+		CssBuilder.AddClass("btn-group-vertical", Vertical);
 		GetOrSetAttribute("role", "group");
 
 		if (Size is not Size.Medium)
