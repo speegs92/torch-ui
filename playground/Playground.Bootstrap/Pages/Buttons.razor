@@ -1,0 +1,78 @@
+﻿@page "/buttons"
+@using static TorchUI.Bootstrap.ThemeColor
+@using static TorchUI.Bootstrap.Size
+
+<DocPage Title="Buttons">
+	<DocSection
+		Subpath="components/buttons/#base-class"
+		Title="Base class">
+		<Button>Base class</Button>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/buttons/#variants"
+		Title="Variants">
+		<Button Color="Primary">Primary</Button>
+		<Button Color="Secondary">Secondary</Button>
+		<Button Color="Success">Success</Button>
+		<Button Color="Danger">Danger</Button>
+		<Button Color="Warning">Warning</Button>
+		<Button Color="Info">Info</Button>
+		<Button Color="Light">Light</Button>
+		<Button Color="Dark">Dark</Button>
+
+		<Interjection>
+			<strong>Be aware:</strong> <code>&lt;Button&gt;</code> does not currently support the <code>.btn-link</code> variant. You can achieve this by adding the <code>.btn-link</code> class directly to a plain <code>&lt;Button&gt;</code>, e.g. <code>&lt;Button class="btn-link"&gt;</code>.
+		</Interjection>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/buttons/#button-tags"
+		Title="Button tags">
+		<Button Color="Primary" href="#">Link</Button>
+		<Button Color="Primary">Button</Button>
+		<Button Color="Primary" value="Input"/>
+		<Button Color="Primary" type="submit">Submit</Button>
+		<Button Color="Primary" type="submit" value="Submit"/>
+		<Button Color="Primary" type="reset">Reset</Button>
+		<Button Color="Primary" type="reset" value="Reset"/>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/buttons/#outline-buttons"
+		Title="Outline buttons">
+		<Button Color="Primary" Outlined>Primary</Button>
+		<Button Color="Secondary" Outlined>Secondary</Button>
+		<Button Color="Success" Outlined>Success</Button>
+		<Button Color="Danger" Outlined>Danger</Button>
+		<Button Color="Warning" Outlined>Warning</Button>
+		<Button Color="Info" Outlined>Info</Button>
+		<Button Color="Light" Outlined>Light</Button>
+		<Button Color="Dark" Outlined>Dark</Button>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/buttons/#sizes"
+		Title="Sizes">
+		<Button Color="Primary" Size="Large">Large button</Button>
+		<Button Color="Primary" Size="Small">Small button</Button>
+
+		<Interjection>
+			<strong>Be aware:</strong> Bootstrap buttons do not support the extra-large size.
+		</Interjection>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/buttons/#toggle-states"
+		Title="Toggle states">
+		<p class="d-inline-flex gap-1">
+			<Button Color="Primary" Toggle="Toggle.Button">Toggle button</Button>
+			<Button Color="Primary" Toggle="Toggle.Button" Active>Active toggle button</Button>
+			<Button Color="Primary" Toggle="Toggle.Button" disabled>Disabled toggle button</Button>
+		</p>
+
+		<Interjection>
+			<strong>Be aware:</strong> setting <code>Toggle="Toggle.Button"</code> and <code>Active="true"</code> on a <code>&lt;Button&gt;</code> component will automatically apply the <code>.active</code> class and <code>aria-pressed="true"</code> attributes, as recommended in the Bootstrap 5.3 docs.
+		</Interjection>
+	</DocSection>
+</DocPage>
