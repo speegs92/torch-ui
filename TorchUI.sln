@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorchUI.Bootstrap", "src\To
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TorchUI.Core", "src\TorchUI.Core\TorchUI.Core.csproj", "{F5FD054A-1A63-42A6-B5B5-F9C339030A23}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "playground", "playground", "{312D6391-ADD2-449E-A0E9-EE5071E4BBBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Playground.Bootstrap", "playground\Playground.Bootstrap\Playground.Bootstrap.csproj", "{FB36A1AB-E317-4B1B-AF44-1593935CBCB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +30,14 @@ Global
 		{F5FD054A-1A63-42A6-B5B5-F9C339030A23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5FD054A-1A63-42A6-B5B5-F9C339030A23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5FD054A-1A63-42A6-B5B5-F9C339030A23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB36A1AB-E317-4B1B-AF44-1593935CBCB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB36A1AB-E317-4B1B-AF44-1593935CBCB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB36A1AB-E317-4B1B-AF44-1593935CBCB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB36A1AB-E317-4B1B-AF44-1593935CBCB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{03A6CE9C-7D0F-449C-9F81-0512E76E6CCB} = {3C56A597-BA7B-4F01-83A1-CF6CC8DD5689}
 		{F5FD054A-1A63-42A6-B5B5-F9C339030A23} = {3C56A597-BA7B-4F01-83A1-CF6CC8DD5689}
+		{FB36A1AB-E317-4B1B-AF44-1593935CBCB4} = {312D6391-ADD2-449E-A0E9-EE5071E4BBBD}
 	EndGlobalSection
 EndGlobal
