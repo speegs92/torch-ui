@@ -1,0 +1,18 @@
+﻿<h2 class="mt-5 mb-3">
+	Bootstrap equivalent: 
+	<a
+		href="@($"https://www.getbootstrap.com/docs/5.3/{Subpath}")"
+		target="_blank">
+		@ChildContent
+	</a>
+</h2>
+   
+@code {
+
+	[Parameter]
+    public required string Subpath { get; set; }
+
+	[Parameter]
+    public required RenderFragment ChildContent { get; set; }
+
+}
