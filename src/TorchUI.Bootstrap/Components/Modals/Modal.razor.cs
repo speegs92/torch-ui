@@ -58,7 +58,7 @@ public partial class Modal
 	/// Whether the modal should be open by default
 	/// </summary>
 	[Parameter]
-	public bool Open { get; set; }
+	public bool Show { get; set; }
 
 	/// <inheritdoc/>
 	protected override void SetupAttributes()
@@ -66,7 +66,7 @@ public partial class Modal
 		CssBuilder
 			.AddClass("modal")
 			.AddClass("fade", Fade)
-			.AddClass("position-static d-block", Open);
+			.AddClass("position-static d-block", Show);
 
 		if (Size is not Size.Medium)
 		{
@@ -85,7 +85,7 @@ public partial class Modal
 			UserAttributes["data-bs-keyboard"] = "false";
 		}
 
-		if (Open)
+		if (Show)
 		{
 			UserAttributes["aria-modal"] = "true";
 		}
