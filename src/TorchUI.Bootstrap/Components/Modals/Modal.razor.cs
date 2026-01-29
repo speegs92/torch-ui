@@ -43,6 +43,12 @@ public partial class Modal
 	public bool Static { get; set; }
 
 	/// <summary>
+	/// Whether the modal should display a scroll bar to handle overflow content
+	/// </summary>
+	[Parameter]
+	public bool Scrollable { get; set; }
+
+	/// <summary>
 	/// Whether the modal should suppress closing when the ESC key is pressed
 	/// </summary>
 	[Parameter]
@@ -96,6 +102,11 @@ public partial class Modal
 		if (Centered)
 		{
 			classes += " modal-dialog-centered";
+		}
+
+		if (Scrollable)
+		{
+			classes += " modal-dialog-scrollable";
 		}
 
 		if (FullscreenOn.HasValue)
