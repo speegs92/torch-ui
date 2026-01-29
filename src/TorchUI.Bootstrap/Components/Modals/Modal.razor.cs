@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using TorchUI.Bootstrap.Extensions;
 
 // ReSharper disable once CheckNamespace
@@ -7,11 +6,6 @@ namespace TorchUI.Bootstrap.Components;
 
 public partial class Modal
 {
-	private string _id = string.Empty;
-	private readonly string _fallbackId = Guid
-		.NewGuid()
-		.ToString();
-
 	/// <summary>
 	/// The modal size
 	/// </summary>
@@ -74,7 +68,6 @@ public partial class Modal
 		}
 
 		UserAttributes["tabindex"] = -1;
-		_id = GetOrSetAttribute("id", _fallbackId);
 
 		if (Static)
 		{

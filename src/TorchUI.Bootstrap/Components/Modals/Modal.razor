@@ -5,15 +5,10 @@
 <TorchComponentBase
 	Tag="@Tag"
 	@attributes="UserAttributes"
-	id="@_id"
 	class="@CssBuilder.Build()">
-	<CascadingValue
-		Value="@_id"
-		Name="ModalId">
-		<div class="@CreateDialogCssClasses()">
-			<div class="modal-content">
-				@ChildContent
-			</div>
+	<div class="@CreateDialogCssClasses()">
+		<div class="modal-content">
+			@ChildContent
 		</div>
-	</CascadingValue>
+	</div>
 </TorchComponentBase>
