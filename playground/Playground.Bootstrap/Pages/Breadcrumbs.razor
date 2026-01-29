@@ -1,0 +1,38 @@
+﻿@page "/breadcrumbs"
+
+<DocPage Title="Breadcrumbs">
+	<DocSection
+		Subpath="components/breadcrumb/#example"
+		Title="Example">
+		<Breadcrumb>
+			<BreadcrumbItem Active>
+				Home
+			</BreadcrumbItem>
+		</Breadcrumb>
+
+		<Breadcrumb>
+			<BreadcrumbItem Href="#">
+				Home
+			</BreadcrumbItem>
+			<BreadcrumbItem Active>
+				Library
+			</BreadcrumbItem>
+		</Breadcrumb>
+
+		<Breadcrumb>
+			<BreadcrumbItem Href="#">
+				Home
+			</BreadcrumbItem>
+			<BreadcrumbItem Href="#">
+				Library
+			</BreadcrumbItem>
+			<BreadcrumbItem Active>
+				Data
+			</BreadcrumbItem>
+		</Breadcrumb>
+
+		<Interjection>
+			<strong>FYI:</strong> The <code>Href</code> parameter is ignored if the <code>Active</code> parameter is <code>true</code>, so you can programmatically determine the <code>Active</code> parameter without programmatically hiding the <code>Href</code> parameter if you wish.
+		</Interjection>
+	</DocSection>
+</DocPage>
