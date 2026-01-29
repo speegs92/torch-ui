@@ -33,7 +33,7 @@
 		<div
 			id="@_id"
 			class="@CreateAccordionCollapseClasses()"
-			data-bs-parent="@(string.IsNullOrEmpty(AccordionId) ? null : $"#{AccordionId}")">
+			data-bs-parent="@CreateAccordionCollapseParentAttribute()">
 			<div class="accordion-body">
 				@ChildContent
 			</div>

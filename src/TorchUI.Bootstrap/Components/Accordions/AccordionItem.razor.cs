@@ -52,8 +52,14 @@ public partial class AccordionItem
 	/// <summary>
 	/// The ID of the parent accordion
 	/// </summary>
-	[CascadingParameter(Name = "AccordionId")]
-	public string? AccordionId { get; set; }
+	[CascadingParameter(Name = nameof(AccordionId))]
+	public string AccordionId { get; set; } = null!;
+
+	/// <summary>
+	/// Whether the parent accordion has its <see cref="Accordion.AlwaysOpen"/> parameter set to <c>true</c>
+	/// </summary>
+	[CascadingParameter(Name = nameof(AccordionAlwaysOpen))]
+	public bool AccordionAlwaysOpen { get; set; }
 
 	/// <inheritdoc/>
 	protected override void SetupAttributes()
@@ -82,5 +88,15 @@ public partial class AccordionItem
 		return Show
 			? $"{baseClasses} show"
 			: baseClasses;
+	}
+
+	private string? CreateAccordionCollapseParentAttribute()
+	{
+		if (AccordionAlwaysOpen || string.IsNullOrEmpty(AccordionId))
+		{
+			return null;
+		}
+
+		return $"#{AccordionId}";
 	}
 }

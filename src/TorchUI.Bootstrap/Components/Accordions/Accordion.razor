@@ -5,6 +5,11 @@
 <CascadingValue
 	TValue="string"
 	Value="@_id"
-	Name="AccordionId">
-	@BuildHtml()
+	Name="@nameof(AccordionItem.AccordionId)">
+	<CascadingValue
+		TValue="bool"
+		Value="@AlwaysOpen"
+		Name="@nameof(AccordionItem.AccordionAlwaysOpen)">
+		@BuildHtml()
+	</CascadingValue>
 </CascadingValue>

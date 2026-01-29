@@ -29,12 +29,9 @@ public partial class Accordion
 	/// <inheritdoc/>
 	protected override void SetupAttributes()
 	{
-		if (!AlwaysOpen)
-		{
-			_id = GetOrSetAttribute(
-				"id",
-				_fallbackId);
-		}
+		_id = GetOrSetAttribute(
+			"id",
+			_fallbackId);
 
 		CssBuilder.AddClass("accordion");
 		CssBuilder.AddClass("accordion-flush", Flush);
