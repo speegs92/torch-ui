@@ -54,12 +54,19 @@ public partial class Modal
 	[Parameter]
 	public bool DisableKeyboard { get; set; }
 
+	/// <summary>
+	/// Whether the modal should be open by default
+	/// </summary>
+	[Parameter]
+	public bool Open { get; set; }
+
 	/// <inheritdoc/>
 	protected override void SetupAttributes()
 	{
 		CssBuilder
 			.AddClass("modal")
-			.AddClass("fade", Fade);
+			.AddClass("fade", Fade)
+			.AddClass("position-static d-block", Open);
 
 		if (Size is not Size.Medium)
 		{
@@ -67,7 +74,6 @@ public partial class Modal
 		}
 
 		UserAttributes["tabindex"] = -1;
-		UserAttributes["aria-hidden"] = "true";
 		_id = GetOrSetAttribute("id", _fallbackId);
 
 		if (Static)
@@ -78,6 +84,15 @@ public partial class Modal
 		if (DisableKeyboard)
 		{
 			UserAttributes["data-bs-keyboard"] = "false";
+		}
+
+		if (Open)
+		{
+			UserAttributes["aria-modal"] = "true";
+		}
+		else
+		{
+			UserAttributes["aria-hidden"] = "true";
 		}
 	}
 
