@@ -1,0 +1,189 @@
+﻿@page "/list-groups"
+
+<DocPage Title="List groups">
+	<DocSection
+		Subpath="components/list-group/#basic-example"
+		Title="Basic example">
+		<ListGroup Tag="ul">
+			<ListGroupItem>An item</ListGroupItem>
+			<ListGroupItem>A second item</ListGroupItem>
+			<ListGroupItem>A third item</ListGroupItem>
+			<ListGroupItem>A fourth item</ListGroupItem>
+			<ListGroupItem>And a fifth one</ListGroupItem>
+		</ListGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/list-group/#active-items"
+		Title="Active items">
+		<ListGroup Tag="ul">
+			<ListGroupItem Active>An active item</ListGroupItem>
+			<ListGroupItem>A second item</ListGroupItem>
+			<ListGroupItem>A third item</ListGroupItem>
+			<ListGroupItem>A fourth item</ListGroupItem>
+			<ListGroupItem>And a fifth one</ListGroupItem>
+		</ListGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/list-group/#links-and-buttons"
+		Title="Links and buttons">
+		<ListGroup class="mb-2">
+			<ListGroupItemLink
+				Active
+				href="#">
+				The current link item
+			</ListGroupItemLink>
+			<ListGroupItemLink href="#">
+				A second link item
+			</ListGroupItemLink>
+			<ListGroupItemLink href="#">
+				A third link item
+			</ListGroupItemLink>
+			<ListGroupItemLink href="#">
+				A fourth link item
+			</ListGroupItemLink>
+			<ListGroupItemLink href="#" disabled>
+				A disabled link item
+			</ListGroupItemLink>
+		</ListGroup>
+
+		<ListGroup>
+			<ListGroupItemButton Active>
+				The current button
+			</ListGroupItemButton>
+			<ListGroupItemButton>
+				A second button item
+			</ListGroupItemButton>
+			<ListGroupItemButton>
+				A third button item
+			</ListGroupItemButton>
+			<ListGroupItemButton>
+				A fourth button item
+			</ListGroupItemButton>
+			<ListGroupItemButton disabled>
+				A disabled button item
+			</ListGroupItemButton>
+		</ListGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/list-group/#flush"
+		Title="Flush">
+		<ListGroup
+			Tag="ul"
+			Flush>
+			
+			<ListGroupItem>An item</ListGroupItem>
+			<ListGroupItem>A second item</ListGroupItem>
+			<ListGroupItem>A third item</ListGroupItem>
+			<ListGroupItem>A fourth item</ListGroupItem>
+			<ListGroupItem>And a fifth one</ListGroupItem>
+		</ListGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/list-group/#numbered"
+		Title="Numbered">
+		<ListGroup
+			Tag="ol"
+			Numbered
+			class="mb-2">
+			<ListGroupItem>A list item</ListGroupItem>
+			<ListGroupItem>A list item</ListGroupItem>
+			<ListGroupItem>A list item</ListGroupItem>
+		</ListGroup>
+
+		<ListGroup
+			Tag="ol"
+			Numbered>
+			@for (var i = 0; i < 3; i++)
+			{
+				<ListGroupItem class="d-flex justify-content-between align-items-start">
+					<div class="ms-2 me-auto">
+						<div class="fw-bold">Subheading</div>
+						Content for list item
+					</div>
+					<Badge Color="Primary" Pill>14</Badge>
+				</ListGroupItem>
+			}
+		</ListGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/list-group/#horizontal"
+		Title="Horizontal">
+		<ListGroup HorizontalAt="Xs">
+			@CreateHorizontalListItems()
+		</ListGroup>
+		<ListGroup HorizontalAt="Sm">
+			@CreateHorizontalListItems()
+		</ListGroup>
+		<ListGroup HorizontalAt="Md">
+			@CreateHorizontalListItems()
+		</ListGroup>
+		<ListGroup HorizontalAt="Lg">
+			@CreateHorizontalListItems()
+		</ListGroup>
+		<ListGroup HorizontalAt="Xl">
+			@CreateHorizontalListItems()
+		</ListGroup>
+		<ListGroup HorizontalAt="Xxl">
+			@CreateHorizontalListItems()
+		</ListGroup>
+		<ListGroup
+			HorizontalAt="Xs"
+			EqualWidth>
+			@CreateHorizontalListItems()
+		</ListGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/list-group/#variants"
+		Title="Variants">
+		<ListGroup class="mb-2">
+			<ListGroupItem>A simple default list group item</ListGroupItem>
+			<ListGroupItem Color="Primary">A simple primary list group item</ListGroupItem>
+			<ListGroupItem Color="Secondary">A simple secondary list group item</ListGroupItem>
+			<ListGroupItem Color="Success">A simple success list group item</ListGroupItem>
+			<ListGroupItem Color="Danger">A simple danger list group item</ListGroupItem>
+			<ListGroupItem Color="Warning">A simple warning list group item</ListGroupItem>
+			<ListGroupItem Color="Info">A simple info list group item</ListGroupItem>
+			<ListGroupItem Color="Light">A simple light list group item</ListGroupItem>
+			<ListGroupItem Color="Dark">A simple dark list group item</ListGroupItem>
+		</ListGroup>
+
+		<ListGroup Color="Primary">
+			<ListGroupItem>A simple inherited list group item</ListGroupItem>
+			<ListGroupItem>A simple inherited list group item</ListGroupItem>
+			<ListGroupItem>A simple inherited list group item</ListGroupItem>
+		</ListGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/list-group/#for-links-and-buttons"
+		Title="For links and buttons">
+		<ListGroup>
+			<ListGroupItemButton>A simple default list group item button</ListGroupItemButton>
+			<ListGroupItemButton Color="Primary">A simple primary list group item button</ListGroupItemButton>
+			<ListGroupItemButton Color="Secondary">A simple secondary list group item button</ListGroupItemButton>
+			<ListGroupItemButton Color="Success">A simple success list group item button</ListGroupItemButton>
+			<ListGroupItemButton Color="Danger">A simple danger list group item button</ListGroupItemButton>
+			<ListGroupItemButton Color="Warning">A simple warning list group item button</ListGroupItemButton>
+			<ListGroupItemButton Color="Info">A simple info list group item button</ListGroupItemButton>
+			<ListGroupItemButton Color="Light">A simple light list group item button</ListGroupItemButton>
+			<ListGroupItemButton Color="Dark">A simple dark list group item button</ListGroupItemButton>
+		</ListGroup>
+	</DocSection>
+</DocPage>
+
+@code {
+
+	private RenderFragment CreateHorizontalListItems() => __builder =>
+	{
+		<ListGroupItem>An item</ListGroupItem>
+		<ListGroupItem>A second item</ListGroupItem>
+		<ListGroupItem>A third item</ListGroupItem>
+	};
+
+}
