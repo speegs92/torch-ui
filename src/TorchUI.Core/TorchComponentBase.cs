@@ -35,6 +35,8 @@ public class TorchComponentBase : ComponentBase
 	/// <inheritdoc/>
 	protected override void OnParametersSet()
 	{
+		CssBuilder.Clear();
+
 		if (UserAttributes.TryGetValue("class", out var userClasses))
 		{
 			// ReSharper disable once ConditionIsAlwaysTrueOrFalseAccordingToNullableAPIContract

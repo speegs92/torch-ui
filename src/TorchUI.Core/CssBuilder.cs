@@ -34,6 +34,16 @@ public class CssBuilder
 		=> flag ? AddClass(className) : this;
 
 	/// <summary>
+	/// Clears all CSS classes from the <c>CssBuilder</c>
+	/// </summary>
+	/// <returns>the <c>CssBuilder</c></returns>
+	public CssBuilder Clear()
+	{
+		_classes.Clear();
+		return this;
+	}
+
+	/// <summary>
 	/// Builds the final CSS string
 	/// </summary>
 	/// <returns>the CSS string, if any</returns>
@@ -44,8 +54,6 @@ public class CssBuilder
 			return null;
 		}
 
-		var built = string.Join(' ', _classes);
-		_classes.Clear();
-		return built;
+		return string.Join(' ', _classes);
 	}
 }
