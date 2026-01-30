@@ -9,19 +9,19 @@ namespace TorchUI.Bootstrap.Components;
 public class Container : TorchComponentBase
 {
 	/// <summary>
-	/// The max-width of the Bootstrap container. Corresponds to <c>.container-sm</c>, <c>.container-md</c>, etc.
+	/// The breakpoint at which the Bootstrap container stops being full-width. Corresponds to <c>.container-sm</c>, <c>.container-md</c>, etc.
 	/// </summary>
 	/// <remarks>
 	/// If <see cref="Fluid"/> is <see langword="true"/>, this parameter has no effect.
 	/// </remarks>
 	[Parameter]
-	public Breakpoint MaxWidth { get; set; } = Breakpoint.Xs;
+	public Breakpoint FullWidthUntil { get; set; } = Breakpoint.Xs;
 
 	/// <summary>
 	/// Whether the Bootstrap container should be fluid. Corresponds to <c>.container-fluid</c>
 	/// </summary>
 	/// <remarks>
-	/// If <see cref="Fluid"/> is <see langword="true"/>, the <see cref="MaxWidth"/> parameter has no effect.
+	/// If <see cref="Fluid"/> is <see langword="true"/>, the <see cref="FullWidthUntil"/> parameter has no effect.
 	/// </remarks>
 	[Parameter]
 	public bool Fluid { get; set; }
@@ -32,12 +32,12 @@ public class Container : TorchComponentBase
 		// If XS, only add "container"
 		CssBuilder.AddClass(
 			"container",
-			!Fluid && MaxWidth == Breakpoint.Xs);
+			!Fluid && FullWidthUntil == Breakpoint.Xs);
 
 		// If >XS, only add "container-{breakpoint}"
 		CssBuilder.AddClass(
-			$"container-{MaxWidth.ToString().ToLowerInvariant()}",
-			!Fluid && MaxWidth > Breakpoint.Xs);
+			$"container-{FullWidthUntil.ToString().ToLowerInvariant()}",
+			!Fluid && FullWidthUntil > Breakpoint.Xs);
 
 		// If fluid, only add "container-fluid"
 		CssBuilder.AddClass("container-fluid", Fluid);
