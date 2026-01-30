@@ -1,0 +1,311 @@
+﻿@page "/cards";
+
+<DocPage Title="Cards">
+	<DocSection
+		Subpath="components/card/#example"
+		Title="Example">
+		<Card style="width: 18rem;">
+			<CardImage
+				Position="Top"
+				src="https://placehold.co/600x400?text=Image+cap"/>
+			<CardBody>
+				<CardTitle Tag="h5">
+					Card title
+				</CardTitle>
+
+				<CardText>
+					Some quick example text to build on the card title and make up the bulk of the card’s content.
+				</CardText>
+
+				<Button
+					Color="Primary"
+					href="#">
+					Go somewhere
+				</Button>
+			</CardBody>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#body"
+		Title="Content types - body">
+		<Card>
+			<CardBody>
+				This is some text within a card body.
+			</CardBody>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#titles-text-and-links"
+		Title="Content types - titles, text, and links">
+		<Card style="width: 18rem;">
+			<CardBody>
+				<CardTitle Tag="h5">
+					Card title
+				</CardTitle>
+				<CardSubtitle
+					Tag="h6"
+					class="text-body-secondary mb-2">
+					Card subtitle
+				</CardSubtitle>
+
+				<CardText>
+					Some quick example text to build on the card title and make up the bulk of the card’s content.
+				</CardText>
+
+				<CardLink href="#">Card link</CardLink>
+				<CardLink href="#">Another link</CardLink>
+			</CardBody>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#titles-text-and-links"
+		Title="Content types - images">
+		<Card style="width: 18rem;">
+			<CardImage
+				Position="Top"
+				src="https://placehold.co/600x400?text=Image+cap"/>
+
+			<CardBody>
+				<CardText>
+					Some quick example text to build on the card title and make up the bulk of the card’s content.
+				</CardText>
+			</CardBody>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#list-groups"
+		Title="Content types - list groups">
+		<Card
+			class="mb-2"
+			style="width: 18rem">
+			<ListGroup Flush>
+				<ListGroupItem>An item</ListGroupItem>
+				<ListGroupItem>A second item</ListGroupItem>
+				<ListGroupItem>A third item</ListGroupItem>
+			</ListGroup>
+		</Card>
+
+		<Card
+			class="mb-2"
+			style="width: 18rem">
+			<CardHeader>
+				Featured
+			</CardHeader>
+			<ListGroup Flush>
+				<ListGroupItem>An item</ListGroupItem>
+				<ListGroupItem>A second item</ListGroupItem>
+				<ListGroupItem>A third item</ListGroupItem>
+			</ListGroup>
+		</Card>
+
+		<Card style="width: 18rem">
+			<ListGroup Flush>
+				<ListGroupItem>An item</ListGroupItem>
+				<ListGroupItem>A second item</ListGroupItem>
+				<ListGroupItem>A third item</ListGroupItem>
+			</ListGroup>
+			<CardFooter>
+				Card footer
+			</CardFooter>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#kitchen-sink"
+		Title="Kitchen sink">
+		<Card style="width: 18rem;">
+			<CardImage
+				Position="Top"
+				src="https://placehold.co/600x400?text=Image+cap"/>
+
+			<CardBody>
+				<CardTitle Tag="h5">Card title</CardTitle>
+				<CardText>
+					Some quick example text to build on the card title and make up the bulk of the card’s content.
+				</CardText>
+			</CardBody>
+
+			<ListGroup Flush>
+				<ListGroupItem>An item</ListGroupItem>
+				<ListGroupItem>A second item</ListGroupItem>
+				<ListGroupItem>A third item</ListGroupItem>
+			</ListGroup>
+
+			<CardBody>
+				<CardLink href="#">Card link</CardLink>
+				<CardLink href="#">Another link</CardLink>
+			</CardBody>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#header-and-footer"
+		Title="Header and footer">
+		<Card
+			class="mb-2"
+			style="width: 18rem;">
+			<CardHeader Tag="h5">Featured</CardHeader>
+
+			<CardBody>
+				<CardTitle Tag="h5">Special title treatment</CardTitle>
+				<CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+				<Button Color="Primary" href="#">Go somewhere</Button>
+			</CardBody>
+		</Card>
+
+		<Card
+			class="text-center"
+			style="width: 18rem;">
+			<CardHeader>Featured</CardHeader>
+
+			<CardBody>
+				<CardTitle Tag="h5">Special title treatment</CardTitle>
+				<CardText>With supporting text below as a natural lead-in to additional content.</CardText>
+				<Button Color="Primary" href="#">Go somewhere</Button>
+			</CardBody>
+
+			<CardFooter>
+				2 days ago
+			</CardFooter>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#image-caps"
+		Title="Image caps">
+		<Card
+			class="mb-2"
+			style="width: 18rem;">
+			<CardImage
+				Position="Top"
+				src="https://placehold.co/600x400?text=Image+cap"/>
+
+			<CardBody>
+				<CardTitle Tag="h5">Card title</CardTitle>
+				<CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+				<CardText>
+					<small class="text-body-secondary">Last updated 3 minutes ago</small>
+				</CardText>
+			</CardBody>
+		</Card>
+
+		<Card style="width: 18rem;">
+			<CardBody>
+				<CardTitle Tag="h5">Card title</CardTitle>
+				<CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+				<CardText>
+					<small class="text-body-secondary">Last updated 3 minutes ago</small>
+				</CardText>
+			</CardBody>
+
+			<CardImage
+				Position="Bottom"
+				src="https://placehold.co/600x400?text=Image+cap"/>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#image-overlays"
+		Title="Image overlays">
+		<Card style="width: 18rem;">
+			<CardImage src="https://placehold.co/600x400?text=Image+overlay"/>
+
+			<CardImageOverlay>
+				<CardTitle Tag="h5">Card title</CardTitle>
+				<CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
+				<CardText>
+					<small>Last updated 3 minutes ago</small>
+				</CardText>
+			</CardImageOverlay>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#background-and-color"
+		Title="Background and color">
+		<Card
+			ThemeColor="Primary"
+			style="width: 18rem;">
+			<CardHeader>Header</CardHeader>
+
+			<CardBody>
+				<CardTitle Tag="h5">Primary card title</CardTitle>
+				<CardText>Some quick example text to build on the card title and make up the bulk of the card’s content.</CardText>
+			</CardBody>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#border"
+		Title="Border">
+		<Card
+			BorderColor="Primary"
+			TextColor="Primary"
+			style="width: 18rem;">
+			<CardHeader>Header</CardHeader>
+
+			<CardBody>
+				<CardTitle Tag="h5">Primary card title</CardTitle>
+				<CardText>Some quick example text to build on the card title and make up the bulk of the card’s content.</CardText>
+			</CardBody>
+		</Card>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/card/#card-groups"
+		Title="Card groups">
+		<CardGroup>
+			<Card>
+				<CardImage
+					Position="Top"
+					src="https://placehold.co/600x400?text=Image+cap"/>
+				<CardBody>
+					<CardTitle Tag="h5">Card title</CardTitle>
+					<CardText>
+						This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+					</CardText>
+				</CardBody>
+
+				<CardFooter>
+					<small class="text-body-secondary">Last updated 3 minutes ago</small>
+				</CardFooter>
+			</Card>
+
+			<Card>
+				<CardImage
+					Position="Top"
+					src="https://placehold.co/600x400?text=Image+cap"/>
+				<CardBody>
+					<CardTitle Tag="h5">Card title</CardTitle>
+					<CardText>
+						This card has supporting text below as a natural lead-in to additional content.
+					</CardText>
+				</CardBody>
+
+				<CardFooter>
+					<small class="text-body-secondary">Last updated 3 minutes ago</small>
+				</CardFooter>
+			</Card>
+
+			<Card>
+				<CardImage
+					Position="Top"
+					src="https://placehold.co/600x400?text=Image+cap"/>
+				<CardBody>
+					<CardTitle Tag="h5">Card title</CardTitle>
+					<CardText>
+						This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+					</CardText>
+				</CardBody>
+
+				<CardFooter>
+					<small class="text-body-secondary">Last updated 3 minutes ago</small>
+				</CardFooter>
+			</Card>
+		</CardGroup>
+	</DocSection>
+</DocPage>
