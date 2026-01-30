@@ -1,0 +1,15 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits TorchComponentBase
+
+<CascadingValue
+	TValue="ThemeColor?"
+	Value="Color"
+	Name="@nameof(ListGroupItemBase.InheritedColor)">
+	<CascadingValue
+		TValue="bool"
+		Value="HorizontalAt.HasValue && EqualWidth"
+		Name="@nameof(ListGroupItemBase.EqualWidth)">
+		@BuildHtml()
+	</CascadingValue>
+</CascadingValue>
