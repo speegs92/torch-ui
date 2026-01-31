@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using TorchUI.Bootstrap.Extensions;
 
 // ReSharper disable once CheckNamespace
@@ -49,8 +48,11 @@ public class Button : TorchComponentBase
 	public string? Target { get; set; }
 
 	/// <summary>
-	/// Whether the button should be rendered as active
+	/// Whether the control the button controls is active
 	/// </summary>
+	/// <remarks>
+	/// If the button is a toggle button, this refers to the button itself - i.e., if the button is in the "on" state, <see cref="Active"/> should be <see langword="true"/>. If the button is a different type of Bootstrap toggle, such as a modal toggle, this refers to the external control's active state - i.e., if the button's <see cref="Target"/> modal is open, <see cref="Active"/> should be <see langword="true"/>.
+	/// </remarks>
 	[Parameter]
 	public bool Active { get; set; }
 
@@ -124,12 +126,6 @@ public class Button : TorchComponentBase
 	{
 		var value = Toggle!.Value;
 
-		if (value is Bootstrap.Toggle.Button && Active)
-		{
-			CssBuilder.AddClass("active");
-			UserAttributes.Add("aria-pressed", "true");
-		}
-
 		UserAttributes.Add(
 			"data-bs-toggle",
 			value.ToString().ToLowerInvariant());
@@ -137,6 +133,22 @@ public class Button : TorchComponentBase
 		if (!string.IsNullOrEmpty(Target))
 		{
 			UserAttributes.Add("data-bs-target", Target);
+
+			if (Target.StartsWith('#'))
+			{
+				UserAttributes.Add("aria-controls", Target);
+			}
+		}
+
+		switch (value)
+		{
+			case Bootstrap.Toggle.Button:
+				CssBuilder.AddClass("active", Active);
+				UserAttributes.Add("aria-pressed", Active ? "true" : "false");
+				break;
+			case Bootstrap.Toggle.Collapse:;
+				UserAttributes.Add("aria-expanded", Active ? "true" : "false");
+				break;
 		}
 	}
 }
