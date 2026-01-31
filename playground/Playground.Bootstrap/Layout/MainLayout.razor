@@ -5,16 +5,20 @@
 	<Row>
 		<Column
 			Xs="2"
-			Tag="nav">
+			Tag="nav"
+			class="border-end border-secondary-subtle">
 			<ul class="list-unstyled">
-				@foreach (var page in _pages)
+				@foreach (var area in _areas)
 				{
-					<li>
-						<a
-							href="@($"/{Slugify(page)}")"
-							class="text-capitalize d-block py-1">
-							@(page)
-						</a>
+					<li class="pt-3">
+						@CreateHeader(area)
+
+						<ul class="list-unstyled">
+							@foreach (var page in area.Pages)
+							{
+								@CreatePageLink(page)
+							}
+						</ul>
 					</li>
 				}
 			</ul>
@@ -32,21 +36,81 @@
 
 @code {
 
-	private readonly string[] _pages = [
-		"accordions",
-		"badges",
-		"breadcrumbs",
-		"buttons",
-		"button groups",
-		"cards",
-		"carousels",
-		"list groups",
-		"modals"
+	private readonly Area[] _areas =
+	[
+		new(
+			"components",
+			"menu-button-wide-fill",
+			Info,
+			[
+				"accordions",
+				"badges",
+				"breadcrumbs",
+				"buttons",
+				"button groups",
+				"cards",
+				"carousels",
+				"list groups",
+				"modals"
+			])
 	];
 
 	private static string Slugify(string input)
 	{
 		return new Regex("\\s").Replace(input, "-");
+	}
+
+	private RenderFragment CreateHeader(Area area) => __builder =>
+	{
+		<h3 class="h5 text-capitalize">
+			<div class="row">
+				<div class="col-2">
+					<Icon
+						Name="@area.Icon"
+						Color="@area.Color"/>
+				</div>
+				<div class="col-10">
+					@area.Name
+				</div>
+			</div>
+		</h3>
+	};
+
+	private RenderFragment CreatePageLink(string page) => __builder =>
+	{
+		<li>
+			<div class="row">
+				<div class="col-2">&nbsp;</div>
+				<div class="col-10">
+					<a
+						href="@($"/{Slugify(page)}")"
+						class="text-capitalize text-start py-1 btn menu-button-link">
+						@(page)
+					</a>
+				</div>
+			</div>
+
+		</li>
+	};
+
+	private class Area
+	{
+		public readonly string Name;
+		public readonly string Icon;
+		public readonly ThemeColor Color;
+		public readonly string[] Pages;
+
+		public Area(
+			string name,
+			string icon,
+			ThemeColor color,
+			string[] pages)
+		{
+			Name = name;
+			Icon = icon;
+			Color = color;
+			Pages = pages;
+		}
 	}
 
 }

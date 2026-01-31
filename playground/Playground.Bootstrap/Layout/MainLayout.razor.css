@@ -1,0 +1,7 @@
+﻿.menu-button-link {
+	margin-left: calc(var(--bs-btn-padding-x) * -1);
+
+	&:hover {
+		background: color-mix(in srgb, var(--bs-indigo), transparent 85%);
+	}
+}
