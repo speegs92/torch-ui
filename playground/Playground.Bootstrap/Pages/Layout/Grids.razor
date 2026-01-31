@@ -1,0 +1,239 @@
+﻿@page "/layout/grids"
+
+<DocPage
+	Title="Grids"
+	class="grid-page">
+	<Interjection OmitWrapper>
+		<p>
+			<strong>Be aware:</strong> Creating non-numeric column values (e.g., <code>.col</code> or <code>.row-cols-auto</code>) is somewhat verbose. This is partly a fundamental limitation of C# and Razor, and partly a consequence of how we chose to represent column sizes: TorchUI uses structs with static members and implicit operators both to validate the column values and to make column sizes feel more "Bootstrap-y."
+		</p>
+
+		<p>
+			Column parameters on <code>&lt;Column&gt;</code> are of type <code>TorchUI.Bootstrap.ColumnSize</code>. To achieve <code>.col{-breakpoint}-{size}</code>, set the appropriate breakpoint parameter to a numeric value and it will be implicitly cast to the correct type, e.g. <code>&lt;Column Xs="6"&gt; </code> to achieve <code>.col-6</code>. To achieve <code>.col{-breakpoint}</code>, set the appropriate breakpoint parameter to <code>"col"</code>, e.g. <code>&lt;Column Sm="@@("col")"&gt;</code> to achieve <code>.col-sm</code>. To achieve <code>.col{-breakpoint}-auto</code>, set the appropriate breakpoint parameter to <code>"auto"</code>, e.g. <code>&lt;Column Sm="@@("auto")"&gt;</code> to achieve <code>.col-sm-auto</code>.
+		</p>
+
+		<p>
+			Auto-column parameters on <code>&lt;Row&gt;</code> are of type <code>TorchUI.Bootstrap.AutoColumnSize</code>. To achieve <code>.row-cols{-breakpoint}-{size}</code>, set the appropriate breakpoint parameter to a numeric value and it will be implicitly cast to the correct type, e.g. <code>&lt;Row Xs="6"&gt; </code> to achieve <code>.row-cols-6</code>. To achieve <code>..row-cols{-breakpoint}-auto</code>, set the appropriate breakpoint parameter to <code>"auto"</code>, e.g. <code>&lt;Row Sm="@@("auto")"&gt;</code> to achieve <code>.row-cols-sm-auto</code>.
+		</p>
+
+		<p>
+			In the rest of our examples, we use public static members of <code>ColumnSize</code> and <code>AutoColumnSize</code> to avoid the awkward at-syntax required to pass a string literal as the value of a non-string parameter. While this is longer, the syntax is cleaner and more intuitive to read. For example, to achieve <code>.col{-breakpoint}-auto</code>, you can alternatively set the appropriate breakpoint parameter to <code>ColumnSize.Auto</code>, e.g. <code>&lt;Column Sm="ColumnSize.Auto"&gt;</code> to achieve <code>.col-sm-auto</code>.
+		</p>
+	</Interjection>
+
+	<DocSection
+		Subpath="layout/grid/#example"
+		Title="Example">
+		<Container class="text-center">
+			<Row>
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/grid/#equal-width"
+		Title="Auto-layout columns: Equal-width">
+		<Container class="text-center">
+			<Row>
+				<Column>1 of 2</Column>
+				<Column>2 of 2</Column>
+			</Row>
+			<Row>
+				<Column>1 of 3</Column>
+				<Column>2 of 3</Column>
+				<Column>3 of 3</Column>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/grid/#setting-one-column-width"
+		Title="Auto-layout columns: Setting one column width">
+		<Container class="text-center">
+			<Row>
+				<Column>1 of 3</Column>
+				<Column Xs="6">2 of 3 (wider)</Column>
+				<Column>3 of 3</Column>
+			</Row>
+			<Row>
+				<Column>1 of 3</Column>
+				<Column Xs="5">2 of 3 (wider)</Column>
+				<Column>3 of 3</Column>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/grid/#variable-width-content"
+		Title="Auto-layout columns: Variable width content">
+		<Container class="text-center">
+			<Row class="justify-content-md-center">
+				<Column Lg="2">
+					1 of 3
+				</Column>
+				<Column Md="ColumnSize.Auto">
+					Variable width content
+				</Column>
+				<Column Lg="2">
+					3 of 3
+				</Column>
+			</Row>
+
+			<Row>
+				<Column>
+					1 of 3
+				</Column>
+				<Column Md="ColumnSize.Auto">
+					Variable width content
+				</Column>
+				<Column Lg="2">
+					3 of 3
+				</Column>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/grid/#all-breakpoints"
+		Title="Responsive classes: All breakpoints">
+		<Container class="text-center">
+			<Row>
+				<Column>col</Column>
+				<Column>col</Column>
+				<Column>col</Column>
+				<Column>col</Column>
+			</Row>
+
+			<Row>
+				<Column Xs="8">col-8</Column>
+				<Column Xs="4">col-4</Column>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/grid/#stacked-to-horizontal"
+		Title="Responsive classes: Stacked to horizontal">
+		<Container class="text-center">
+			<Row>
+				<Column Xs="null" Sm="8">
+					col-sm-8
+				</Column>
+				<Column Xs="null" Sm="4">
+					col-sm-4
+				</Column>
+			</Row>
+
+			<Row>
+				<Column Xs="null" Sm="ColumnSize.Col">
+					col-sm
+				</Column>
+				<Column Xs="null" Sm="ColumnSize.Col">
+					col-sm
+				</Column>
+				<Column Xs="null" Sm="ColumnSize.Col">
+					col-sm
+				</Column>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/grid/#mix-and-match"
+		Title="Responsive classes: Mix and match">
+		<Container class="text-center">
+			<Row>
+				<Column Xs="null" Md="8">
+					.col-md-8
+				</Column>
+				<Column Xs="6" Md="4">
+					.col-6 .col-md-4
+				</Column>
+			</Row>
+
+			<Row>
+				<Column Xs="6" Md="4">
+					.col-6 .col-md-4
+				</Column>
+				<Column Xs="6" Md="4">
+					.col-6 .col-md-4
+				</Column>
+				<Column Xs="6" Md="4">
+					.col-6 .col-md-4
+				</Column>
+			</Row>
+
+			<Row>
+				<Column Xs="6">
+					.col-6
+				</Column>
+				<Column Xs="6">
+					.col-6
+				</Column>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/grid/#row-columns"
+		Title="Row columns">
+		<Container class="text-center">
+			<Row Xs="2">
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+			</Row>
+
+			<Row Xs="3">
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+			</Row>
+
+			<Row Xs="AutoColumnSize.Auto">
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+			</Row>
+
+			<Row Xs="4">
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+			</Row>
+
+			<Row Xs="4">
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column Xs="6">Column</Column>
+				<Column>Column</Column>
+			</Row>
+
+			<Row Xs="1" Sm="2" Md="4">
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+				<Column>Column</Column>
+			</Row>
+		</Container>
+	</DocSection>
+</DocPage>
+
+<style>
+	.grid-page .row {
+		margin-bottom: .5rem;
+
+		& > div {
+			background: color-mix(in srgb, var(--bs-indigo), transparent 85%);
+			border: 1px solid var(--bs-indigo);
+			padding: .5rem;
+		}
+	}
+</style>
