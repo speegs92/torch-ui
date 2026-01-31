@@ -16,7 +16,7 @@
 						<ul class="list-unstyled">
 							@foreach (var page in area.Pages)
 							{
-								@CreatePageLink(page)
+								@CreatePageLink(area.Name, page)
 							}
 						</ul>
 					</li>
@@ -83,14 +83,14 @@
 		</h3>
 	};
 
-	private RenderFragment CreatePageLink(string page) => __builder =>
+	private RenderFragment CreatePageLink(string area, string page) => __builder =>
 	{
 		<li>
 			<div class="row">
 				<div class="col-2">&nbsp;</div>
 				<div class="col-10">
 					<a
-						href="@($"/{Slugify(page)}")"
+						href="@($"/{area}/{Slugify(page)}")"
 						class="text-capitalize text-start py-1 btn menu-button-link">
 						@(page)
 					</a>
