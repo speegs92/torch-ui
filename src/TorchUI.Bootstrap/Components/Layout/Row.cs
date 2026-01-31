@@ -16,63 +16,58 @@ public class Row : TorchComponentBase
 	/// The number of auto-layout columns on the default breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Xs { get; set; }
+	public AutoColumnSize? Xs { get; set; }
 
 	/// <summary>
 	/// The number of auto-layout columns on the small breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Sm { get; set; }
+	public AutoColumnSize? Sm { get; set; }
 
 	/// <summary>
 	/// The number of auto-layout columns on the medium breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Md { get; set; }
+	public AutoColumnSize? Md { get; set; }
 
 	/// <summary>
 	/// The number of auto-layout columns on the large breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Lg { get; set; }
+	public AutoColumnSize? Lg { get; set; }
 
 	/// <summary>
 	/// The number of auto-layout columns on the extra-large breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Xl { get; set; }
+	public AutoColumnSize? Xl { get; set; }
 
 	/// <summary>
 	/// The number of auto-layout columns on the extra-extra-large breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Xxl { get; set; }
+	public AutoColumnSize? Xxl { get; set; }
 
-	private void AddBreakpointCols(string? infix, int? cols)
+	private void AddBreakpointCols(string? infix, AutoColumnSize? columnSize)
 	{
-		if (cols is null)
+		if (columnSize is null)
 		{
 			return;
 		}
 
-		if (cols is >6 or <0)
-		{
-			throw new ArgumentOutOfRangeException(
-				nameof(cols),
-				$"Bootstrap Grid supports a maximum of 6 auto-columns, {cols} provided");
-		}
+		var size = columnSize.Value;
 
 		var className = string.IsNullOrEmpty(infix)
 			? "row-cols"
 			: $"row-cols-{infix}";
 
-		if (cols == 0)
+		if (size.IsAuto)
 		{
 			className = $"{className}-auto";
 		}
 		else
 		{
-			className = $"{className}-{cols}";
+			className = $"{className}-{size.Size}";
 		}
 
 		CssBuilder.AddClass(className);
