@@ -16,64 +16,58 @@ public class Column : TorchComponentBase
 	/// The width of this column on the default breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Xs { get; set; } = -1;
+	public ColumnSize? Xs { get; set; } = ColumnSize.Col;
 
 	/// <summary>
 	/// The width of this column on the small breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Sm { get; set; }
+	public ColumnSize? Sm { get; set; }
 
 	/// <summary>
 	/// The width of this column on the medium breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Md { get; set; }
+	public ColumnSize? Md { get; set; }
 
 	/// <summary>
 	/// The width of this column on the large breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Lg { get; set; }
+	public ColumnSize? Lg { get; set; }
 
 	/// <summary>
 	/// The width of this column on the extra-large breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Xl { get; set; }
+	public ColumnSize? Xl { get; set; }
 
 	/// <summary>
 	/// The width of this column on the extra-extra-large breakpoint
 	/// </summary>
 	[Parameter]
-	public int? Xxl { get; set; }
+	public ColumnSize? Xxl { get; set; }
 
-	private void AddBreakpointCols(string? infix, int? cols)
+	private void AddBreakpointCols(string? infix, ColumnSize? columnSize)
 	{
-		if (cols is null)
+		if (columnSize is null)
 		{
 			return;
 		}
 
-		if (cols is >12 or <-1)
-		{
-			throw new ArgumentOutOfRangeException(
-				nameof(cols),
-				$"Bootstrap Grid supports a maximum of 12 columns, {cols} provided");
-		}
+		var size = columnSize.Value;
 
-		// Covers cols == -1 by default
 		var className = string.IsNullOrEmpty(infix)
 			? "col"
 			: $"col-{infix}";
 
-		if (cols == 0)
+		if (size.IsAuto)
 		{
 			className = $"{className}-auto";
 		}
-		else if (cols > 0)
+		else if (!size.IsCol)
 		{
-			className = $"{className}-{cols}";
+			className = $"{className}-{size.Size}";
 		}
 
 		CssBuilder.AddClass(className);
