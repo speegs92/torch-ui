@@ -18,7 +18,7 @@ public class TorchComponentBase : ComponentBase
 	/// Represents the HTML tag with which the component should render
 	/// </summary>
 	[Parameter]
-	public string Tag { get; set; } = "div";
+	public string? Tag { get; set; }
 
 	/// <summary>
 	/// Represents the child content of the component
@@ -63,8 +63,9 @@ public class TorchComponentBase : ComponentBase
 	protected void BuildHtml(RenderTreeBuilder rtb)
 	{
 		var classes = CssBuilder.Build();
+		var tag = Tag ?? "div";
 
-		rtb.OpenElement(0, Tag);
+		rtb.OpenElement(0, tag);
 		rtb.AddMultipleAttributes(1, UserAttributes);
 
 		if (!string.IsNullOrEmpty(classes))
