@@ -1,6 +1,6 @@
 ﻿@page "/components/navs"
 
-<DocPage Title="Navs">
+<DocPage Title="Navs and tabs">
 	<Interjection>
 		<strong>Be aware:</strong> TorchUI separates navs and tabs into separate components because tabs have layout and functionality which navs do not. The TorchUI <code>&lt;Nav&gt;</code> component <em>does</em> have the option to render as a tab list, but this is presentational only. If you want a tab list, use the <code>&lt;TabList&gt;</code> component.
 	</Interjection>
@@ -223,5 +223,38 @@
 				Disabled
 			</NavLink>
 		</Nav>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/navs-tabs/#using-data-attributes"
+		Title="JavaScript behavior - Using data attributes">
+		<TabList Tabs>
+			<TabPane Title="Home" Active>
+				This is some placeholder content the <strong>Home tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.
+			</TabPane>
+			<TabPane>
+				<Activator>
+					<NavItem role="presentation">
+						<TabActivator
+							Id="@context.ActivatorId"
+							TabPaneId="@context.TabPaneId"
+							Active="context.Active"
+							Disabled="context.Disabled">
+							Profile
+						</TabActivator>
+					</NavItem>
+				</Activator>
+
+				<ChildContent>
+					This is some placeholder content the <strong>Profile tab's</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.
+				</ChildContent>
+			</TabPane>
+			<TabPane Title="Contact">
+				This is some placeholder content the <strong>Contact tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.
+			</TabPane>
+			<TabPane Title="Disabled" Disabled>
+				This is some placeholder content the <strong>Disabled tab’s</strong> associated content. Clicking another tab will toggle the visibility of this one for the next. The tab JavaScript swaps classes to control the content visibility and styling. You can use it with tabs, pills, and any other <code>.nav</code>-powered navigation.
+			</TabPane>
+		</TabList>
 	</DocSection>
 </DocPage>
