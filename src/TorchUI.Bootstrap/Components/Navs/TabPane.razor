@@ -1,0 +1,42 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits TorchComponentBase
+
+<TorchComponentBase
+	id="@_tabPaneId"
+	class="@CssBuilder.Build()"
+	role="tabpanel"
+	tabindex="0"
+	aria-labelledby="@ActivatorId">
+	@ChildContent
+</TorchComponentBase>
+
+@code {
+
+	public RenderFragment RenderActivator() => __builder =>
+	{
+		@if (Activator is not null)
+		{
+			@Activator(new TabActivator.TabActivatorParameters
+			{
+				ActivatorId = ActivatorId,
+				TabPaneId = _tabPaneId,
+				Active = Active,
+				Disabled = Disabled
+			})
+		}
+		else
+		{
+			<NavItem role="presentation">
+				<TabActivator
+					Id="@ActivatorId"
+					TabPaneId="@_tabPaneId"
+					Active="Active"
+					Disabled="Disabled">
+					@Title
+				</TabActivator>
+			</NavItem>
+		}
+	};
+
+}
