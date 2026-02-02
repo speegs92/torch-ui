@@ -61,12 +61,15 @@
 				"carousels",
 				"collapses",
 				"list groups",
-				"modals"
+				"modals",
+				"navs & tabs"
 			])
 	];
 
 	private static string Slugify(string input)
 	{
+		input = input.Replace(" & ", "-");
+
 		return new Regex("\\s").Replace(input, "-");
 	}
 
