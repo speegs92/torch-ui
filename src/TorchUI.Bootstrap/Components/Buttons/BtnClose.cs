@@ -6,7 +6,7 @@ namespace TorchUI.Bootstrap.Components;
 /// <summary>
 /// Represents a Bootstrap <c>.btn-close</c>
 /// </summary>
-public class CloseButton : TorchComponentBase
+public class BtnClose : TorchComponentBase
 {
 	/// <summary>
 	/// The ARIA label to describe the button. Defaults to "Close".
@@ -23,7 +23,7 @@ public class CloseButton : TorchComponentBase
 	[Parameter]
 	public Toggle? Dismiss { get; set; }
 
-	public CloseButton() => Tag = "button";
+	public BtnClose() => Tag = "button";
 
 	/// <inheritdoc />
 	protected override void SetupAttributes()

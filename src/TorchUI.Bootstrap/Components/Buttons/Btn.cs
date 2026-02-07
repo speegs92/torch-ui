@@ -15,7 +15,7 @@ namespace TorchUI.Bootstrap.Components;
 /// If the component receives <c>href="#"</c>, it not only renders as an <c>&lt;a&gt;</c>, but it also adds <c>role="button"</c> because an anchor tag with <c>href="#"</c> is probably being used as a trigger for in-page content.
 /// </para> 
 /// </remarks>
-public class Button : TorchComponentBase
+public class Btn : TorchComponentBase
 {
 	/// <summary>
 	/// The Bootstrap theme color of the button

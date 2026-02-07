@@ -7,7 +7,7 @@ namespace TorchUI.Bootstrap.Components;
 /// <summary>
 /// Represents a Bootstrap <c>.btn-group</c>
 /// </summary>
-public class ButtonGroup : TorchComponentBase
+public class BtnGroup : TorchComponentBase
 {
 	/// <summary>
 	/// The ARIA label to describe the button group

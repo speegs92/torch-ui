@@ -6,7 +6,7 @@ namespace TorchUI.Bootstrap.Components;
 /// <summary>
 /// Represents a Bootstrap <c>.btn-toolbar</c>
 /// </summary>
-public class ButtonToolbar : TorchComponentBase
+public class BtnToolbar : TorchComponentBase
 {
 	/// <summary>
 	/// The ARIA label to describe the button toolbar
