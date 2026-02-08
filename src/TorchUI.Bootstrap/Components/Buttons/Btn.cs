@@ -1,85 +1,27 @@
-﻿using Microsoft.AspNetCore.Components;
-using TorchUI.Bootstrap.Extensions;
-
-// ReSharper disable once CheckNamespace
+﻿// ReSharper disable once CheckNamespace
 namespace TorchUI.Bootstrap.Components;
 
 /// <summary>
 /// Represents a Bootstrap <c>.btn</c>
 /// </summary>
 /// <remarks>
-/// <para>
 /// Because Bootstrap button classes are valid on different types of markup, this component attempts to infer which type of markup should be rendered based on the supplied attributes. If an <c>href</c> is supplied, the component renders as an <c>&lt;a&gt;</c> tag. If a <c>value</c> is supplied, the component renders as an <c>&lt;input type="button"&gt;</c>. If neither value is supplied, the component renders as a <c>&lt;button&gt;</c>.
-/// </para>
-/// <para>
-/// If the component receives <c>href="#"</c>, it not only renders as an <c>&lt;a&gt;</c>, but it also adds <c>role="button"</c> because an anchor tag with <c>href="#"</c> is probably being used as a trigger for in-page content.
-/// </para> 
 /// </remarks>
-public class Btn : TorchComponentBase
+public class Btn : BtnBase
 {
-	/// <summary>
-	/// The Bootstrap theme color of the button
-	/// </summary>
-	[Parameter]
-	public ThemeColor? Color { get; set; }
-
-	/// <summary>
-	/// The Bootstrap size of the button
-	/// </summary>
-	[Parameter]
-	public Size Size { get; set; } = Size.Medium;
-
-	/// <summary>
-	/// Whether the button should be outlined
-	/// </summary>
-	/// <remarks>
-	/// Only has an effect if the <see cref="Color"/> parameter has a value because Bootstrap doesn't define a <c>.btn-outline</c> class
-	/// </remarks>
-	[Parameter]
-	public bool Outlined { get; set; }
-
+	/// <inheritdoc />
 	protected override void SetupAttributes()
 	{
-		// Anchor tags don't need a type attribute
-		var omitType = false;
-
-		if (UserAttributes.TryGetValue("href", out var href))
+		if (UserAttributes.ContainsKey("href"))
 		{
 			// If there's an href, this should be a link
 			Tag = "a";
-			omitType = true;
-
-			// If the href equals "#", the anchor is a trigger for in-page functionality
-			if (href.ToString() == "#")
-			{
-				UserAttributes.Add("role", "button");
-			}
 		}
 		else if (UserAttributes.ContainsKey("value"))
 		{
 			Tag = "input";
 		}
-		else
-		{
-			Tag = "button";
-		}
 
-		if (!omitType && !UserAttributes.TryGetValue("type", out _))
-		{
-			UserAttributes.Add("type", "button");
-		}
-
-		CssBuilder.AddClass("btn");
-
-		if (Color is not null)
-		{
-			var outlinedInfix = Outlined ? "-outline" : string.Empty;
-			CssBuilder.AddClass(Color.Value.GetThemeColorClass($"btn{outlinedInfix}"));
-		}
-
-		if (Size is not Size.Medium)
-		{
-			CssBuilder.AddClass(Size.GetSizeClass("btn"));
-		}
+		base.SetupAttributes();
 	}
 }

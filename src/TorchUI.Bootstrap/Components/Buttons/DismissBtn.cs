@@ -6,7 +6,7 @@ namespace TorchUI.Bootstrap.Components;
 /// <summary>
 /// Represents a Bootstrap <c>.btn</c> with a <c>data-bs-dismiss</c> attribute
 /// </summary>
-public class DismissBtn : Btn
+public class DismissBtn : BtnBase
 {
 	/// <summary>
 	/// The dismiss action of the button

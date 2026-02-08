@@ -6,7 +6,7 @@ namespace TorchUI.Bootstrap.Components;
 /// <summary>
 /// Represents a Bootstrap <c>.btn</c> with a <c>data-bs-toggle</c> attribute
 /// </summary>
-public class ToggleBtn : Btn
+public class ToggleBtn : BtnBase
 {
 	/// <summary>
 	/// The toggle action of the button
