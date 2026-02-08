@@ -25,12 +25,12 @@
 	<DocSection
 		Subpath="components/modal/#live-demo"
 		Title="Live demo">
-		<Btn
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#exampleModal">
 			Launch demo modal
-		</Btn>
+		</ToggleBtn>
 
 		<Modal
 			Fade
@@ -44,12 +44,12 @@
 			</ModalBody>
 
 			<ModalFooter>
-				<Btn
+				<DismissBtn
 					Color="Secondary"
 					Outlined
 					Dismiss="Toggle.Modal">
 					Close
-				</Btn>
+				</DismissBtn>
 				<Btn Color="Primary">
 					Save changes
 				</Btn>
@@ -57,19 +57,19 @@
 		</Modal>
 
 		<Interjection>
-			<strong>FYI:</strong> To create a close button for a Bootstrap modal, create a <code>&lt;Button Dismiss="Toggle.Modal"&gt;</code> as a child element of the modal. The <code>&lt;ModalHeader&gt;</code> automatically renders a <code>&lt;CloseButton&gt;</code>, so you will only need to supply this button if you supply custom markup to <code>&lt;ModalHeader&gt;</code>.
+			<strong>FYI:</strong> To create a close button for a Bootstrap modal, create a <code>&lt;DismissBtn Dismiss="Toggle.Modal"&gt;</code> as a child element of the modal. The <code>&lt;ModalHeader&gt;</code> automatically renders a <code>&lt;BtnClose&gt;</code>, so you will only need to supply this button if you supply custom markup to <code>&lt;ModalHeader&gt;</code>.
 		</Interjection>
 	</DocSection>
 
 	<DocSection
 		Subpath="components/modal/#static-backdrop"
 		Title="Static backdrop">
-		<Btn
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#staticBackdrop">
 			Launch static backdrop modal
-		</Btn>
+		</ToggleBtn>
 
 		<Modal
 			Fade
@@ -85,12 +85,12 @@
 			</ModalBody>
 
 			<ModalFooter>
-				<Btn
+				<DismissBtn
 					Color="Secondary"
 					Outlined
 					Dismiss="Toggle.Modal">
 					Close
-				</Btn>
+				</DismissBtn>
 				<Btn Color="Primary">
 					Understood
 				</Btn>
@@ -105,19 +105,19 @@
 	<DocSection
 		Subpath="components/modal/#scrolling-long-content"
 		Title="Scrolling long content">
-		<Btn
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#longContent">
 			Long content modal
-		</Btn>
+		</ToggleBtn>
 
-		<Btn
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#scrollable">
 			Scrollable modal
-		</Btn>
+		</ToggleBtn>
 
 		<Modal
 			Fade
@@ -131,12 +131,12 @@
 			</ModalBody>
 
 			<ModalFooter>
-				<Btn
+				<DismissBtn
 					Color="Secondary"
 					Outlined
 					Dismiss="Toggle.Modal">
 					Close
-				</Btn>
+				</DismissBtn>
 				<Btn Color="Primary">
 					Save changes
 				</Btn>
@@ -161,12 +161,12 @@
 			</ModalBody>
 
 			<ModalFooter>
-				<Btn
+				<DismissBtn
 					Color="Secondary"
 					Outlined
 					Dismiss="Toggle.Modal">
 					Close
-				</Btn>
+				</DismissBtn>
 				<Btn Color="Primary">
 					Save changes
 				</Btn>
@@ -177,19 +177,19 @@
 	<DocSection
 		Subpath="components/modal/#vertically-centered"
 		Title="Vertically centered">
-		<Btn
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#verticallyCentered">
 			Launch vertically centered modal
-		</Btn>
+		</ToggleBtn>
 
-		<Btn
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#centeredScrollable">
 			Launch vertically centered scrollable modal
-		</Btn>
+		</ToggleBtn>
 
 		<Modal
 			Fade
@@ -204,12 +204,12 @@
 			</ModalBody>
 
 			<ModalFooter>
-				<Btn
+				<DismissBtn
 					Color="Secondary"
 					Outlined
 					Dismiss="Toggle.Modal">
 					Close
-				</Btn>
+				</DismissBtn>
 				<Btn Color="Primary">
 					Save changes
 				</Btn>
@@ -235,12 +235,12 @@
 			</ModalBody>
 
 			<ModalFooter>
-				<Btn
+				<DismissBtn
 					Color="Secondary"
 					Outlined
 					Dismiss="Toggle.Modal">
 					Close
-				</Btn>
+				</DismissBtn>
 				<Btn Color="Primary">
 					Save changes
 				</Btn>
@@ -251,24 +251,24 @@
 	<DocSection
 		Subpath="components/modal/#optional-sizes"
 		Title="Optional sizes">
-		<Btn
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#xlModal">
 			Extra large modal
-		</Btn>
-		<Btn
+		</ToggleBtn>
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#lgModal">
 			Large modal
-		</Btn>
-		<Btn
+		</ToggleBtn>
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#smModal">
 			Small modal
-		</Btn>
+		</ToggleBtn>
 
 		<Modal
 			Size="ExtraLarge"
@@ -308,42 +308,42 @@
 	<DocSection
 		Subpath="components/modal/#fullscreen-modal"
 		Title="Fullscreen modal">
-		<Btn
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#fullscreen">
 			Full screen
-		</Btn>
-		<Btn
+		</ToggleBtn>
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#fullscreenSm">
 			Full screen below sm
-		</Btn>
-		<Btn
+		</ToggleBtn>
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#fullscreenMd">
 			Full screen below md
-		</Btn>
-		<Btn
+		</ToggleBtn>
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#fullscreenLg">
 			Full screen below lg
-		</Btn>
-		<Btn
+		</ToggleBtn>
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#fullscreenXl">
 			Full screen below xl
-		</Btn>
-		<Btn
+		</ToggleBtn>
+		<ToggleBtn
 			Color="Primary"
 			Toggle="Toggle.Modal"
 			Target="#fullscreenXxl">
 			Full screen below xxl
-		</Btn>
+		</ToggleBtn>
 
 		<Modal
 			FullscreenOn="Xs"
