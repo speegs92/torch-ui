@@ -1,0 +1,9 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits TorchComponentBase
+
+<CascadingValue
+	Value="@_fallbackNavId"
+	Name="NavbarCollapseId">
+	@BuildHtml()
+</CascadingValue>
