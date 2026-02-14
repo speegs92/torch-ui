@@ -26,9 +26,9 @@
 		Title="Example">
 		<Container class="text-center">
 			<Row>
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
 			</Row>
 		</Container>
 	</DocSection>
@@ -38,13 +38,13 @@
 		Title="Auto-layout columns: Equal-width">
 		<Container class="text-center">
 			<Row>
-				<Column>1 of 2</Column>
-				<Column>2 of 2</Column>
+				<Col>1 of 2</Col>
+				<Col>2 of 2</Col>
 			</Row>
 			<Row>
-				<Column>1 of 3</Column>
-				<Column>2 of 3</Column>
-				<Column>3 of 3</Column>
+				<Col>1 of 3</Col>
+				<Col>2 of 3</Col>
+				<Col>3 of 3</Col>
 			</Row>
 		</Container>
 	</DocSection>
@@ -54,14 +54,14 @@
 		Title="Auto-layout columns: Setting one column width">
 		<Container class="text-center">
 			<Row>
-				<Column>1 of 3</Column>
-				<Column Xs="6">2 of 3 (wider)</Column>
-				<Column>3 of 3</Column>
+				<Col>1 of 3</Col>
+				<Col Xs="6">2 of 3 (wider)</Col>
+				<Col>3 of 3</Col>
 			</Row>
 			<Row>
-				<Column>1 of 3</Column>
-				<Column Xs="5">2 of 3 (wider)</Column>
-				<Column>3 of 3</Column>
+				<Col>1 of 3</Col>
+				<Col Xs="5">2 of 3 (wider)</Col>
+				<Col>3 of 3</Col>
 			</Row>
 		</Container>
 	</DocSection>
@@ -71,27 +71,27 @@
 		Title="Auto-layout columns: Variable width content">
 		<Container class="text-center">
 			<Row class="justify-content-md-center">
-				<Column Lg="2">
+				<Col Lg="2">
 					1 of 3
-				</Column>
-				<Column Md="ColumnSize.Auto">
+				</Col>
+				<Col Md="ColumnSize.Auto">
 					Variable width content
-				</Column>
-				<Column Lg="2">
+				</Col>
+				<Col Lg="2">
 					3 of 3
-				</Column>
+				</Col>
 			</Row>
 
 			<Row>
-				<Column>
+				<Col>
 					1 of 3
-				</Column>
-				<Column Md="ColumnSize.Auto">
+				</Col>
+				<Col Md="ColumnSize.Auto">
 					Variable width content
-				</Column>
-				<Column Lg="2">
+				</Col>
+				<Col Lg="2">
 					3 of 3
-				</Column>
+				</Col>
 			</Row>
 		</Container>
 	</DocSection>
@@ -101,15 +101,15 @@
 		Title="Responsive classes: All breakpoints">
 		<Container class="text-center">
 			<Row>
-				<Column>col</Column>
-				<Column>col</Column>
-				<Column>col</Column>
-				<Column>col</Column>
+				<Col>col</Col>
+				<Col>col</Col>
+				<Col>col</Col>
+				<Col>col</Col>
 			</Row>
 
 			<Row>
-				<Column Xs="8">col-8</Column>
-				<Column Xs="4">col-4</Column>
+				<Col Xs="8">col-8</Col>
+				<Col Xs="4">col-4</Col>
 			</Row>
 		</Container>
 	</DocSection>
@@ -119,24 +119,24 @@
 		Title="Responsive classes: Stacked to horizontal">
 		<Container class="text-center">
 			<Row>
-				<Column Xs="null" Sm="8">
+				<Col Xs="null" Sm="8">
 					col-sm-8
-				</Column>
-				<Column Xs="null" Sm="4">
+				</Col>
+				<Col Xs="null" Sm="4">
 					col-sm-4
-				</Column>
+				</Col>
 			</Row>
 
 			<Row>
-				<Column Xs="null" Sm="ColumnSize.Col">
+				<Col Xs="null" Sm="ColumnSize.Col">
 					col-sm
-				</Column>
-				<Column Xs="null" Sm="ColumnSize.Col">
+				</Col>
+				<Col Xs="null" Sm="ColumnSize.Col">
 					col-sm
-				</Column>
-				<Column Xs="null" Sm="ColumnSize.Col">
+				</Col>
+				<Col Xs="null" Sm="ColumnSize.Col">
 					col-sm
-				</Column>
+				</Col>
 			</Row>
 		</Container>
 	</DocSection>
@@ -146,33 +146,33 @@
 		Title="Responsive classes: Mix and match">
 		<Container class="text-center">
 			<Row>
-				<Column Xs="null" Md="8">
+				<Col Xs="null" Md="8">
 					.col-md-8
-				</Column>
-				<Column Xs="6" Md="4">
+				</Col>
+				<Col Xs="6" Md="4">
 					.col-6 .col-md-4
-				</Column>
+				</Col>
 			</Row>
 
 			<Row>
-				<Column Xs="6" Md="4">
+				<Col Xs="6" Md="4">
 					.col-6 .col-md-4
-				</Column>
-				<Column Xs="6" Md="4">
+				</Col>
+				<Col Xs="6" Md="4">
 					.col-6 .col-md-4
-				</Column>
-				<Column Xs="6" Md="4">
+				</Col>
+				<Col Xs="6" Md="4">
 					.col-6 .col-md-4
-				</Column>
+				</Col>
 			</Row>
 
 			<Row>
-				<Column Xs="6">
+				<Col Xs="6">
 					.col-6
-				</Column>
-				<Column Xs="6">
+				</Col>
+				<Col Xs="6">
 					.col-6
-				</Column>
+				</Col>
 			</Row>
 		</Container>
 	</DocSection>
@@ -182,45 +182,45 @@
 		Title="Row columns">
 		<Container class="text-center">
 			<Row Xs="2">
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
 			</Row>
 
 			<Row Xs="3">
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
 			</Row>
 
 			<Row Xs="AutoColumnSize.Auto">
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
 			</Row>
 
 			<Row Xs="4">
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
 			</Row>
 
 			<Row Xs="4">
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column Xs="6">Column</Column>
-				<Column>Column</Column>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col Xs="6">Column</Col>
+				<Col>Column</Col>
 			</Row>
 
 			<Row Xs="1" Sm="2" Md="4">
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
-				<Column>Column</Column>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
+				<Col>Column</Col>
 			</Row>
 		</Container>
 	</DocSection>

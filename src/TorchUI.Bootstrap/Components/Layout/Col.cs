@@ -7,7 +7,7 @@ namespace TorchUI.Bootstrap.Components;
 /// <summary>
 /// Represents a Bootstrap <c>.col</c>
 /// </summary>
-public class Column : TorchComponentBase
+public class Col : TorchComponentBase
 {
 
 #region Columns
