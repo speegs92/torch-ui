@@ -1,0 +1,59 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits DropdownBase
+
+<TorchComponentBase
+	Tag="@Tag"
+	@attributes="UserAttributes"
+	class="@CssBuilder.Build()">
+	@if (string.IsNullOrEmpty(Text))
+	{
+		@ChildContent
+	}
+	else
+	{
+		if (Direction is Direction.Start)
+		{
+			@RenderSplitButton()
+			@RenderDropdownMenu()
+			@RenderNonSplitButton()
+		}
+		else
+		{
+			@RenderNonSplitButton()
+			@RenderSplitButton()
+			@RenderDropdownMenu()
+		}
+	}
+</TorchComponentBase>
+
+@code {
+
+	@* ReSharper disable UnusedParameter.Local *@
+	private RenderFragment RenderSplitButton() => __builder =>
+	{
+		<DropdownToggleSplitBtn
+			Color="Color"
+			Size="Size"/>
+	};
+
+	private RenderFragment RenderNonSplitButton() => __builder =>
+	{
+		<Btn
+			Color="Color"
+			Size="Size"
+			href="@Href"
+			id="@ButtonId">
+			@Text
+		</Btn>
+	};
+
+	private RenderFragment RenderDropdownMenu() => __builder =>
+	{
+		<DropdownMenu>
+			@ChildContent
+		</DropdownMenu>
+	};
+	@* ReSharper restore UnusedParameter.Local *@
+
+}

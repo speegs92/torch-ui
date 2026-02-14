@@ -1,0 +1,27 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits DropdownBase
+
+<TorchComponentBase
+	Tag="@Tag"
+	@attributes="UserAttributes"
+	class="@CssBuilder.Build()">
+	@* If Text is not supplied, they're building their own content from scratch *@
+	@if (string.IsNullOrEmpty(Text))
+	{
+		@ChildContent
+	}
+	else
+	{
+		<ToggleBtn
+			Color="@Color"
+			Toggle="Toggle.Dropdown"
+			Size="Size">
+			@Text
+		</ToggleBtn>
+
+		<DropdownMenu>
+			@ChildContent
+		</DropdownMenu>
+	}
+</TorchComponentBase>

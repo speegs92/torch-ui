@@ -52,7 +52,11 @@ public class ToggleBtn : BtnBase
 				CssBuilder.AddClass("active", Active);
 				UserAttributes.Add("aria-pressed", Active ? "true" : "false");
 				break;
-			case Toggle.Collapse:;
+			case Toggle.Collapse:
+				UserAttributes.Add("aria-expanded", Active ? "true" : "false");
+				break;
+			case Toggle.Dropdown:
+				CssBuilder.AddClass("dropdown-toggle");
 				UserAttributes.Add("aria-expanded", Active ? "true" : "false");
 				break;
 		}
