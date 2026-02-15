@@ -1,0 +1,148 @@
+﻿@page "/components/offcanvases"
+
+<DocPage Title="Offcanvases">
+	<DocSection
+		Subpath="components/offcanvas/#live-demo"
+		Title="Examples - Live demo">
+		<ToggleBtn
+			Color="Primary"
+			Toggle="Toggle.Offcanvas"
+			Target="#offcanvasExample">
+			Button with data-bs-target
+		</ToggleBtn>
+
+		<Offcanvas
+			Placement="Start"
+			Id="offcanvasExample"
+			Title="Offcanvas"
+			TitleTag="h5">
+			<p>
+				Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+			</p>
+
+			<Dropdown
+				Color="Secondary"
+				Text="Dropdown button">
+				<DropdownItemLink Href="#">
+					Action
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Another action
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Something else here
+				</DropdownItemLink>
+			</Dropdown>
+		</Offcanvas>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/offcanvas/#body-scrolling"
+		Title="Examples - Body scrolling">
+		<ToggleBtn
+			Color="Primary"
+			Toggle="Toggle.Offcanvas"
+			Target="#offcanvasScrolling">
+			Enable body scrolling
+		</ToggleBtn>
+
+		<Offcanvas
+			Placement="Start"
+			Id="offcanvasScrolling"
+			Title="Offcanvas with body scrolling"
+			TitleTag="h5"
+			EnableBodyScrolling
+			DisableBackdrop>
+			<p>Try scrolling the rest of the page to see this option in action.</p>
+		</Offcanvas>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/offcanvas/#body-scrolling-and-backdrop"
+		Title="Examples - Body scrolling and backdrop">
+		<ToggleBtn
+			Color="Primary"
+			Toggle="Toggle.Offcanvas"
+			Target="#offcanvasWithBothOptions">
+			Enable body scrolling & backdrop
+		</ToggleBtn>
+
+		<Offcanvas
+			Placement="Start"
+			Id="offcanvasWithBothOptions"
+			Title="Backdrop with scrolling"
+			TitleTag="h5"
+			EnableBodyScrolling>
+			<p>Try scrolling the rest of the page to see this option in action.</p>
+		</Offcanvas>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/offcanvas/#static-backdrop"
+		Title="Examples - Static backdrop">
+		<ToggleBtn
+			Color="Primary"
+			Toggle="Toggle.Offcanvas"
+			Target="#staticBackdrop">
+			Toggle static backdrop
+		</ToggleBtn>
+
+		<Offcanvas
+			Placement="Start"
+			Id="staticBackdrop"
+			Title="Offcanvas"
+			TitleTag="h5"
+			Static>
+			<p>I will not close if you click outside of me.</p>
+		</Offcanvas>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/offcanvas/#responsive"
+		Title="Responsive">
+		<div class="alert alert-info d-none d-lg-block">
+			Resize your browser to show the responsive offcanvas toggle
+		</div>
+
+		<ToggleBtn
+			Color="Primary"
+			Toggle="Toggle.Offcanvas"
+			Target="#offcanvasResponsive"
+			class="d-lg-none">
+			Toggle offcanvas
+		</ToggleBtn>
+
+		<Offcanvas
+			Placement="Start"
+			HideOn="Lg"
+			Id="offcanvasResponsive"
+			Title="Responsive offcanvas"
+			TitleTag="h5">
+			<p class="mb-0">This is content within an <code>.offcanvas-lg</code>.</p>
+		</Offcanvas>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/offcanvas/#placement"
+		Title="Placement">
+		@foreach (var placement in Enum.GetValues<Placement>())
+		{
+			<div class="mb-2">
+				<ToggleBtn
+					Color="Primary"
+					Toggle="Toggle.Offcanvas"
+					Target="@($"#offcanvas{placement}")">
+					Toggle @placement.ToString().ToLowerInvariant() offcanvas
+				</ToggleBtn>
+			</div>
+
+			<Offcanvas
+				Placement="placement"
+				Id="@($"offcanvas{placement}")"
+				Title="@($"Offcanvas {placement.ToString().ToLowerInvariant()}")"
+				TitleTag="h5">
+				<p>&hellip;</p>
+			</Offcanvas>
+		}
+	</DocSection>
+</DocPage>
