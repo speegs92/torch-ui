@@ -1,0 +1,24 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits TorchComponentBase
+
+<CascadingValue
+	Value="@(TitleId ?? _fallbackTitleId)"
+	Name="@nameof(OffcanvasTitle.TitleId)">
+	<TorchComponentBase
+		Tag="@Tag"
+		@attributes="UserAttributes"
+		class="@CssBuilder.Build()">
+		@if (string.IsNullOrEmpty(Title))
+		{
+			@ChildContent
+		}
+		else
+		{
+			<OffcanvasHeader Title="@Title"/>
+			<OffcanvasBody>
+				@ChildContent
+			</OffcanvasBody>
+		}
+	</TorchComponentBase>
+</CascadingValue>

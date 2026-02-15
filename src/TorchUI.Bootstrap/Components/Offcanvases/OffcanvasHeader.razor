@@ -1,0 +1,24 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits TorchComponentBase
+
+<TorchComponentBase
+	Tag="@Tag"
+	@attributes="UserAttributes"
+	class="@CssBuilder.Build()">
+	@if (string.IsNullOrEmpty(Title))
+	{
+		@ChildContent
+	}
+	else
+	{
+		<OffcanvasTitle Tag="@TitleTag">
+			@Title
+		</OffcanvasTitle>
+
+		@if (!OmitCloseButton)
+		{
+			<BtnClose Dismiss="Toggle.Offcanvas"/>
+		}
+	}
+</TorchComponentBase>
