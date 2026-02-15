@@ -1,27 +1,27 @@
 ﻿namespace TorchUI.Bootstrap;
 
 /// <summary>
-/// Represents various positions that are available within components
+/// Represents various placements that are available within components
 /// </summary>
-public enum Position
+public enum Placement
 {
 	/// <summary>
-	/// The top position
+	/// The top placement
 	/// </summary>
 	Top,
 
 	/// <summary>
-	/// The bottom position
+	/// The bottom placement
 	/// </summary>
 	Bottom,
 
 	/// <summary>
-	/// The left position
+	/// The start placement
 	/// </summary>
-	Left,
+	Start,
 
 	/// <summary>
-	/// The right position
+	/// The end placement
 	/// </summary>
-	Right
+	End
 }

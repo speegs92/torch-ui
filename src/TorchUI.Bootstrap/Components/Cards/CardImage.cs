@@ -10,7 +10,7 @@ namespace TorchUI.Bootstrap.Components;
 /// </summary>
 public class CardImage : TorchComponentBase
 {
-	private Position? _position;
+	private Placement? _placement;
 
 #pragma warning disable BL0007 // Component parameter should be auto property
 
@@ -18,26 +18,26 @@ public class CardImage : TorchComponentBase
 	/// The position of the image
 	/// </summary>
 	/// <exception cref="ArgumentOutOfRangeException">
-	/// Thrown when the value provided is not <see cref="Position.Top"/> or <see cref="Position.Bottom"/>
+	/// Thrown when the value provided is not <see cref="Placement.Top"/> or <see cref="Placement.Bottom"/>
 	/// </exception>
 	[Parameter]
-	public Position? Position
+	public Placement? Placement
 	{
-		get => _position;
+		get => _placement;
 		set
 		{
 			if (value is null)
 			{
-				_position = value;
+				_placement = value;
 				return;
 			}
 
-			if (value.Value is not (Bootstrap.Position.Top or Bootstrap.Position.Bottom))
+			if (value.Value is not (Bootstrap.Placement.Top or Bootstrap.Placement.Bottom))
 			{
-				throw new ArgumentOutOfRangeException($"The {nameof(CardImage)} component only supports {Bootstrap.Position.Top} and {Bootstrap.Position.Bottom} positions");
+				throw new ArgumentOutOfRangeException($"The {nameof(CardImage)} component only supports {Bootstrap.Placement.Top} and {Bootstrap.Placement.Bottom} positions");
 			}
 
-			_position = value;
+			_placement = value;
 		}
 	}
 
@@ -50,9 +50,9 @@ public class CardImage : TorchComponentBase
 
 	protected override void SetupAttributes()
 	{
-		if (_position is not null)
+		if (_placement is not null)
 		{
-			CssBuilder.AddClass(_position.Value.GetPositionClass("card-img"));
+			CssBuilder.AddClass(_placement.Value.GetPlacementClass("card-img"));
 		}
 		else
 		{

@@ -60,8 +60,8 @@ public static class EnumExtensions
 	/// <param name="self">The position</param>
 	/// <param name="prefix">The CSS class prefix</param>
 	/// <returns>The formatted CSS class</returns>
-	public static string GetPositionClass(
-		this Position self,
+	public static string GetPlacementClass(
+		this Placement self,
 		string prefix)
 		=> $"{prefix}-{self.ToString().ToLowerInvariant()}";
 

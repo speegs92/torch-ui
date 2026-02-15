@@ -36,19 +36,20 @@ public abstract class DropdownBase : TorchComponentBase
 	public Size Size { get; set; } = Size.Medium;
 
 	[Parameter]
-	public Direction Direction { get; set; } = Direction.Down;
+	public Placement Placement { get; set; } = Placement.Bottom;
 
 	/// <inheritdoc />
 	protected override void SetupAttributes()
 	{
 		CssBuilder
 			.AddClass("dropdown")
-			.AddClass("dropdown-center", Center && Direction is Direction.Down)
+			.AddClass("dropdown-center", Center && Placement is Placement.Bottom)
 			.AddClass(
 				"dropup-center",
-				Center && Direction is Direction.Up)
+				Center && Placement is Placement.Top)
+			.AddClass("dropup", Placement is Placement.Top)
 			.AddClass(
-				$"drop{Direction.ToString().ToLowerInvariant()}",
-				Direction is not Direction.Down);
+				$"drop{Placement.ToString().ToLowerInvariant()}",
+				Placement is Placement.Start or Placement.End);
 	}
 }
