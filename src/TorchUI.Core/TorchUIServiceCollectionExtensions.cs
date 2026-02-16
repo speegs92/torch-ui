@@ -1,4 +1,6 @@
-﻿using TorchUI.Validation;
+﻿using System.ComponentModel.DataAnnotations;
+using TorchUI.Validation;
+using TorchUI.Validation.Mappers;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection;
@@ -11,7 +13,8 @@ public static class TorchUIServiceCollectionExtensions
 	public static IServiceCollection AddTorchUI(this IServiceCollection self)
 	{
 		self
-			.AddScoped<IValidationAttributeGenerator, DefaultValidationAttributeGenerator>();
+			.AddScoped<IValidationAttributeGenerator, DefaultValidationAttributeGenerator>()
+			.AddScoped<IValidationRuleMapper<RequiredAttribute>, RequiredAttributeMapper>();
 
 		return self;
 	}
