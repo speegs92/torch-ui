@@ -1,0 +1,16 @@
+﻿@* Resharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+
+@inherits TorchComponentBase
+
+<TorchComponentBase
+	Tag="ul"
+	@attributes="UserAttributes"
+	class="@CssBuilder.Build()">
+	@foreach (var e in Errors)
+	{
+		<li>
+			@e
+		</li>
+	}
+</TorchComponentBase>
