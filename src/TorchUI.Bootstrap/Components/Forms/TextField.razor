@@ -1,0 +1,23 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+
+@inherits BaseField<string?>
+
+<TorchComponentBase
+	Tag="@Tag"
+	@attributes="UserAttributes"
+	class="@CssBuilder.Build()">
+	<label
+		for="@Id"
+		class="form-label">
+		@ChildContent
+	</label>
+
+	<TorchInputTextBase
+		Value="@Value"
+		ValueChanged="ValueChanged"
+		ValueExpression="ValueExpression"
+		class="form-control"/>
+
+	<FieldValidationMessage For="@ValueExpression"/>
+</TorchComponentBase>
