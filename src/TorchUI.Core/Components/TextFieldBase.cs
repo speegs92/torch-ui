@@ -7,7 +7,7 @@ namespace TorchUI;
 /// <summary>
 /// Adds HTML5 <c>data-val-*</c> attributes to string inputs for client-side validation
 /// </summary>
-public class TorchInputTextBase : Microsoft.AspNetCore.Components.Forms.InputText
+public class TextFieldBase : Microsoft.AspNetCore.Components.Forms.InputText
 {
 	[Inject]
 	private IValidationAttributeGenerator ValidationAttributeGenerator { get; set; } = null!;
