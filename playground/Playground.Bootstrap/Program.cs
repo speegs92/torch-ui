@@ -9,8 +9,6 @@ builder.Services.AddRazorComponents();
 
 var app = builder.Build();
 
-app.UseExceptionHandler("/Error", createScopeForErrors: true);
-
 app.UseStaticFiles();
 app.UseAntiforgery();
 
