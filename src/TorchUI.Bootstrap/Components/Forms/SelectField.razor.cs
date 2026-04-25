@@ -23,12 +23,6 @@ public partial class SelectField<TValue>
 	public RenderFragment<TValue>? OptionTemplate { get; set; }
 
 	/// <summary>
-	/// The rendered <c>&lt;option&gt;</c>s
-	/// </summary>
-	[Parameter]
-	public RenderFragment? OptionsContent { get; set; }
-
-	/// <summary>
 	/// Whether to show an unselectable null option as the first dropdown option
 	/// </summary>
 	[Parameter]
