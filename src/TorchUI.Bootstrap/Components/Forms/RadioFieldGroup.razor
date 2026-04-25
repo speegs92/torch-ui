@@ -1,0 +1,29 @@
+﻿@namespace TorchUI.Bootstrap.Components
+
+@inherits BaseField<TValue?>
+@using Microsoft.AspNetCore.Components.Forms
+@typeparam TValue
+
+<fieldset>
+	@if (!string.IsNullOrEmpty(Label))
+	{
+		<legend>@Label</legend>
+	}
+
+	<InputRadioGroup
+		Value="@Value"
+		ValueChanged="ValueChanged"
+		ValueExpression="ValueExpression">
+		@if (Options is not null && RadioTemplate is not null)
+		{
+			foreach (var option in Options)
+			{
+				@RadioTemplate(option)
+			}
+		}
+
+		@ChildContent
+	</InputRadioGroup>
+
+	<FieldValidationMessage For="ValueExpression"/>
+</fieldset>
