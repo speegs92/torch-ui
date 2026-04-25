@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 using Microsoft.AspNetCore.Components;
+using TorchUI.Validation;
 
 // ReSharper disable once CheckNamespace
 namespace TorchUI.Bootstrap.Components;
@@ -14,6 +16,9 @@ public class BaseField<TValue> : TorchComponentBase
 	private readonly string _fallbackId = Guid
 		.NewGuid()
 		.ToString();
+
+	private Dictionary<string, object> _validationAttributes = new();
+	private Expression<Func<TValue>>? _previousValueExpression;
 
 	/// <summary>
 	/// The calculated ID of the input
@@ -49,4 +54,26 @@ public class BaseField<TValue> : TorchComponentBase
 	/// </summary>
 	[Parameter]
 	public Expression<Func<TValue>>? ValueExpression { get; set; }
+
+	[Inject]
+	private IValidationAttributeGenerator ValidationAttributeGenerator { get; set; } = null!;
+
+	/// <inheritdoc />
+	protected override void OnParametersSet()
+	{
+		if (!ReferenceEquals(_previousValueExpression, ValueExpression))
+		{
+			_previousValueExpression = ValueExpression;
+
+			if (ValueExpression is not null)
+			{
+				_validationAttributes = ValidationAttributeGenerator.Generate(ValueExpression);
+			}
+
+			foreach (var attr in _validationAttributes)
+			{
+				UserAttributes.Add(attr.Key, attr.Value);
+			}
+		}
+	}
 }

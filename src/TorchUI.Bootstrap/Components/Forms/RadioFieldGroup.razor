@@ -1,10 +1,9 @@
 ﻿@namespace TorchUI.Bootstrap.Components
 
 @inherits BaseField<TValue?>
-@using Microsoft.AspNetCore.Components.Forms
 @typeparam TValue
 
-<fieldset>
+<fieldset @attributes="UserAttributes">
 	@if (!string.IsNullOrEmpty(Label))
 	{
 		<legend>@Label</legend>

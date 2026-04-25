@@ -5,7 +5,6 @@
 
 <TorchComponentBase
 	Tag="@Tag"
-	@attributes="UserAttributes"
 	class="@CssBuilder.Build()">
 	<label
 		for="@Id"
@@ -13,10 +12,11 @@
 		@ChildContent
 	</label>
 
-	<TextFieldBase
+	<InputText
 		Value="@Value"
 		ValueChanged="ValueChanged"
 		ValueExpression="ValueExpression"
+		@attributes="UserAttributes"
 		class="form-control"/>
 
 	<FieldValidationMessage For="@ValueExpression"/>

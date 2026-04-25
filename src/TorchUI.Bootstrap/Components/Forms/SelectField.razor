@@ -6,7 +6,6 @@
 
 <TorchComponentBase
 	Tag="@Tag"
-	@attributes="UserAttributes"
 	class="@CssBuilder.Build()">
 	@if (!string.IsNullOrEmpty(Label))
 	{
@@ -17,10 +16,11 @@
 		</label>
 	}
 
-	<SelectFieldBase
+	<InputSelect
 		Value="Value"
 		ValueChanged="ValueChanged"
 		ValueExpression="ValueExpression"
+		@attributes="UserAttributes"
 		class="form-select">
 		@if (ShowNullOption)
 		{
@@ -38,7 +38,7 @@
 		}
 
 		@ChildContent
-	</SelectFieldBase>
+	</InputSelect>
 
 	<FieldValidationMessage For="ValueExpression"/>
 </TorchComponentBase>
