@@ -1,0 +1,44 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+
+@typeparam TValue
+@inherits BaseField<TValue?>
+
+<TorchComponentBase
+	Tag="@Tag"
+	@attributes="UserAttributes"
+	class="@CssBuilder.Build()">
+	@if (!string.IsNullOrEmpty(Label))
+	{
+		<label
+			for="@Id"
+			class="form-label">
+			@Label
+		</label>
+	}
+
+	<SelectFieldBase
+		Value="Value"
+		ValueChanged="ValueChanged"
+		ValueExpression="ValueExpression"
+		class="form-select">
+		@if (ShowNullOption)
+		{
+			<option disabled>
+				@NullOptionText
+			</option>
+		}
+
+		@if (Options is not null && OptionTemplate is not null)
+		{
+			@foreach (var option in Options)
+			{
+				@OptionTemplate(option)
+			}
+		}
+
+		@ChildContent
+	</SelectFieldBase>
+
+	<FieldValidationMessage For="ValueExpression"/>
+</TorchComponentBase>
