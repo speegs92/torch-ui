@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using TorchUI.Forms;
 using TorchUI.Validation;
 using TorchUI.Validation.Mappers;
 
@@ -13,6 +14,7 @@ public static class TorchUIServiceCollectionExtensions
 	public static IServiceCollection AddTorchUI(this IServiceCollection self)
 	{
 		self
+			.AddScoped<IFieldNameGenerator, DefaultFieldNameGenerator>()
 			.AddScoped<IValidationAttributeGenerator, DefaultValidationAttributeGenerator>()
 			.AddScoped<IValidationRuleMapper<RequiredAttribute>, RequiredAttributeMapper>();
 
