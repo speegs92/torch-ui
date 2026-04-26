@@ -1,0 +1,10 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI
+@typeparam TValue
+
+<input
+	@attributes="UserAttributes"
+	type="checkbox"
+	value="@Value"
+	name="@Context.Name"
+	checked="@(Context.Selected?.Contains(Value) ?? false)"/>
