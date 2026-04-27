@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Components;
+using TorchUI.Bootstrap.Extensions;
 
 // ReSharper disable once CheckNamespace
 namespace TorchUI.Bootstrap.Components;
@@ -10,6 +11,18 @@ namespace TorchUI.Bootstrap.Components;
 /// <typeparam name="TValue">The type of the value</typeparam>
 public partial class SelectField<TValue>
 {
+	private string? FormSelectClasses =>
+		new CssBuilder()
+			.AddClass("form-select")
+			.AddClass(Size.GetSizeClass("form-select"), Size is not Size.Medium)
+			.Build();
+
+	/// <summary>
+	/// The select's size
+	/// </summary>
+	[Parameter]
+	public Size Size { get; set; } = Size.Medium;
+
 	/// <summary>
 	/// The available options
 	/// </summary>
