@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq.Expressions;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Http;
@@ -27,27 +26,5 @@ public partial class FileField
 			_previousValueExpression = ValueExpression;
 			_fieldName = FieldNameGenerator.Generate(ValueExpression);
 		}
-	}
-
-	void RegenerateFieldName()
-	{
-		var members = new List<string>();
-		var node = ValueExpression?.Body;
-
-		while (true)
-		{
-			if (node?.NodeType is not ExpressionType.MemberAccess)
-			{
-				break;
-			}
-
-			var memberExpression = (MemberExpression)node;
-
-			members.Add(memberExpression.Member.Name);
-			node = memberExpression.Expression;
-		}
-
-		members.Reverse();
-		_fieldName = string.Join('.', members);
 	}
 }
