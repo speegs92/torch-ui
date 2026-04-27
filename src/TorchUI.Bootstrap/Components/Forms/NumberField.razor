@@ -1,7 +1,7 @@
 ﻿@* ReSharper disable once CheckNamespace *@
 @namespace TorchUI.Bootstrap.Components
 
-@inherits BaseField<TValue?>
+@inherits FormControl<TValue?>
 @typeparam TValue
 
 <TorchComponentBase
@@ -20,7 +20,7 @@
 		ParsingErrorMessage="@ParsingErrorMessage"
 		@attributes="UserAttributes"
 		id="@Id"
-		class="form-control"/>
+		class="@FormControlClasses"/>
 
 	<FieldValidationMessage For="@ValueExpression"/>
 </TorchComponentBase>

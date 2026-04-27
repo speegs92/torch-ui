@@ -1,7 +1,7 @@
 ﻿@* ReSharper disable once CheckNamespace *@
 @namespace TorchUI.Bootstrap.Components
 
-@inherits BaseField<Microsoft.AspNetCore.Http.IFormFile?>
+@inherits FormControl<Microsoft.AspNetCore.Http.IFormFile?>
 
 <TorchComponentBase
 	Tag="@Tag"
@@ -16,7 +16,7 @@
 		@attributes="UserAttributes"
 		id="@Id"
 		name="@_fieldName"
-		class="form-control"/>
+		class="@FormControlClasses"/>
 
 	<FieldValidationMessage For="@ValueExpression"/>
 </TorchComponentBase>
