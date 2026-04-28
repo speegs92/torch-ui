@@ -16,7 +16,8 @@ public static class TorchUIServiceCollectionExtensions
 		self
 			.AddScoped<IFieldNameGenerator, DefaultFieldNameGenerator>()
 			.AddScoped<IValidationAttributeGenerator, DefaultValidationAttributeGenerator>()
-			.AddScoped<IValidationRuleMapper<RequiredAttribute>, RequiredAttributeMapper>();
+			.AddScoped<IValidationRuleMapper<RequiredAttribute>, RequiredAttributeMapper>()
+			.AddScoped<IValidationRuleMapper<MinLengthAttribute>, MinLengthAttributeMapper>();
 
 		return self;
 	}
