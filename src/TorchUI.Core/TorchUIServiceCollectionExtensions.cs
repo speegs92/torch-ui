@@ -22,7 +22,8 @@ public static class TorchUIServiceCollectionExtensions
 			.AddScoped<IValidationRuleMapper<StringLengthAttribute>, StringLengthAttributeMapper>()
 			.AddScoped<IValidationRuleMapper<RangeAttribute>, RangeAttributeMapper>()
 			.AddScoped<IValidationRuleMapper<RegularExpressionAttribute>, RegularExpressionAttributeMapper>()
-			.AddScoped<IValidationRuleMapper<EmailAddressAttribute>, EmailAddressAttributeMapper>();
+			.AddScoped<IValidationRuleMapper<EmailAddressAttribute>, EmailAddressAttributeMapper>()
+			.AddScoped<IValidationRuleMapper<PhoneAttribute>, PhoneAttributeMapper>();
 
 		return self;
 	}
