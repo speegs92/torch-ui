@@ -52,7 +52,7 @@ public class DefaultValidationAttributeGenerator : IValidationAttributeGenerator
 
 		if (hasValidations)
 		{
-			htmlAttributes["data-val"] = "true";
+			htmlAttributes["data-validate"] = true;
 		}
 
 		return htmlAttributes;
