@@ -5,7 +5,10 @@ using Playground.Bootstrap;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorComponents();
+builder.Services
+	.AddTorchUI()
+	.AddTorchUIBootstrap()
+	.AddRazorComponents();
 
 var app = builder.Build();
 
