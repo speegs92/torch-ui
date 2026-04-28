@@ -15,6 +15,7 @@ public class RequiredAttributeMapper : IValidationRuleMapper<RequiredAttribute>
 	/// <inheritdoc />
 	public void MapToHtmlAttributes(RequiredAttribute attribute, Dictionary<string, object> htmlAttributes)
 	{
-		htmlAttributes["data-val-required"] = attribute.ErrorMessage ?? "Field is required";
+		htmlAttributes["data-validation-required"] = true;
+		htmlAttributes["data-validation-required-error-message"] = attribute.ErrorMessage ?? "Field is required";
 	}
 }
