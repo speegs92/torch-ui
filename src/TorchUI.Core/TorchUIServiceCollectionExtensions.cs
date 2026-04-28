@@ -19,7 +19,8 @@ public static class TorchUIServiceCollectionExtensions
 			.AddScoped<IValidationRuleMapper<RequiredAttribute>, RequiredAttributeMapper>()
 			.AddScoped<IValidationRuleMapper<MinLengthAttribute>, MinLengthAttributeMapper>()
 			.AddScoped<IValidationRuleMapper<MaxLengthAttribute>, MaxLengthAttributeMapper>()
-			.AddScoped<IValidationRuleMapper<StringLengthAttribute>, StringLengthAttributeMapper>();
+			.AddScoped<IValidationRuleMapper<StringLengthAttribute>, StringLengthAttributeMapper>()
+			.AddScoped<IValidationRuleMapper<RangeAttribute>, RangeAttributeMapper>();
 
 		return self;
 	}
