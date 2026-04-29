@@ -1,0 +1,170 @@
+﻿@page "/forms/overview"
+@using System.ComponentModel.DataAnnotations
+@using System.IO
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.AspNetCore.Http
+
+<DocPage Title="Forms overview">
+	<EditForm
+		Model="Ship"
+		FormName="CreateStarship"
+		OnValidSubmit="FormWasValid"
+		enctype="multipart/form-data">
+		<DataAnnotationsValidator/>
+
+		<TextField
+			@bind-Value="Ship.Name"
+			Size="Large"
+			type="password"
+			class="mb-3">
+			Name
+		</TextField>
+
+		<SelectField
+			@bind-Value="Ship.Classification"
+			Options="Enum.GetValues<ShipClass>()"
+			Label="Classification"
+			Size="Large"
+			class="mb-3">
+			<OptionTemplate Context="ctx">
+				<option
+					checked="@(Ship.Classification == ctx)"
+					value="@ctx">
+					@ctx.ToString()
+				</option>
+			</OptionTemplate>
+		</SelectField>
+
+		<RadioFieldGroup
+			@bind-Value="Ship.Captain"
+			Options="@(["Archer", "Janeway", "Kirk", "Picard", "Sisko"])"
+			Label="Ship captain"
+			class="mb-3">
+			<RadioTemplate Context="ctx">
+				<RadioField Value="@ctx">
+					@ctx
+				</RadioField>
+			</RadioTemplate>
+		</RadioFieldGroup>
+
+		<CheckboxFieldGroup
+			@bind-Value="Ship.Officers"
+			Options="@(["Chakotay", "Kira", "Riker", "Spock", "T'Pol"])"
+			Label="First officer(s)"
+			class="mb-3">
+			<CheckboxTemplate Context="ctx">
+				<CheckboxField Value="@ctx">
+					@ctx
+				</CheckboxField>
+			</CheckboxTemplate>
+		</CheckboxFieldGroup>
+
+		<DateField
+			@bind-Value="Ship.LaunchDate"
+			class="mb-3">
+			Original launch date
+		</DateField>
+
+		<NumberField
+			@bind-Value="Ship.CrewSize"
+			class="mb-3">
+			Crew size
+		</NumberField>
+
+		<TextareaField
+			@bind-Value="Ship.Description"
+			class="mb-3">
+			Model description
+		</TextareaField>
+
+		<FileField
+			@bind-Value="Ship.Thumbnail"
+			class="mb-3">
+			Ship image
+		</FileField>
+
+		<div class="mb-3 form-check">
+			<InputCheckbox
+				@bind-Value="Ship.IsActive"
+				class="form-check-input"/>
+			<label class="form-check-label">
+				Model is active
+			</label>
+		</div>
+
+		<Btn Color="Primary" type="submit">Add ship</Btn>
+	</EditForm>
+
+	@if (!string.IsNullOrEmpty(_fileContents))
+	{
+		<div>
+			<img class="img" src="@_fileContents" alt=""/>
+		</div>
+	}
+</DocPage>
+
+@code {
+
+	private string? _fileContents;
+
+	[SupplyParameterFromForm(FormName = "CreateStarship")]
+	public Starship Ship { get; set; }  = new();
+
+	/// <inheritdoc />
+	protected override async Task OnInitializedAsync()
+	{
+		if (Ship.Thumbnail is null) return;
+
+		await using var stream = Ship.Thumbnail.OpenReadStream();
+		await using var ms = new MemoryStream();
+		await stream.CopyToAsync(ms);
+		var base64 = Convert.ToBase64String(ms.ToArray());
+		_fileContents = $"data:{Ship.Thumbnail.ContentType};base64,{base64}";
+	}
+
+	private void FormWasValid()
+	{
+		Console.WriteLine($"You have successfully created a(n) {Ship.Classification} ship named {Ship.Name}!");
+	}
+
+	public class Starship
+	{
+		[Required]
+		[EmailAddress]
+		[MinLength(5)]
+		[MaxLength(10)]
+		public string? Name { get; set; }
+
+		[Required]
+		public ShipClass Classification { get; set; }
+
+		[Required]
+		public DateTime? LaunchDate { get; set; } = DateTime.Parse("2245-04-11T12:00:00Z");
+
+		[Required]
+		[Range(75, 300)]
+		public short CrewSize { get; set; }
+
+		[Required]
+		[MinLength(100)]
+		public string? Description { get; set; }
+
+		[Required]
+		public IFormFile? Thumbnail { get; set; }
+
+		public IEnumerable<string>? Officers { get; set; }
+
+		public bool IsActive { get; set; }
+	
+		[Required]
+		public string Captain { get; set; } = string.Empty;
+	}
+
+	public enum ShipClass
+	{
+		Exploration,
+		Diplomacy,
+		Defense
+	}
+
+}
