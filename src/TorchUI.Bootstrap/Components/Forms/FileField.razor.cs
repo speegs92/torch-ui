@@ -26,5 +26,7 @@ public partial class FileField
 			_previousValueExpression = ValueExpression;
 			_fieldName = FieldNameGenerator.Generate(ValueExpression);
 		}
+
+		base.OnParametersSet();
 	}
 }

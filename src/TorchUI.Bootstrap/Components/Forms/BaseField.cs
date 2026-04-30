@@ -75,5 +75,7 @@ public class BaseField<TValue> : TorchComponentBase
 				UserAttributes.Add(attr.Key, attr.Value);
 			}
 		}
+
+		base.OnParametersSet();
 	}
 }
