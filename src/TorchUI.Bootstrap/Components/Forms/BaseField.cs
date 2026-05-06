@@ -39,6 +39,9 @@ public class BaseField<TValue> : TorchComponentBase
 	[Parameter]
 	public string? InputId { get; set; }
 
+	/// <summary>
+	/// The label text, if any
+	/// </summary>
 	[Parameter]
 	public string? Label { get; set; }
 
