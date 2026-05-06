@@ -25,4 +25,11 @@
 			@ChildContent
 		}
 	</label>
+
+	@if (!string.IsNullOrEmpty(FormText))
+	{
+		<FormText>
+			@FormText
+		</FormText>
+	}
 </TorchComponentBase>
