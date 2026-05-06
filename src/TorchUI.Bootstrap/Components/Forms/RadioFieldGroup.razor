@@ -24,5 +24,12 @@
 		@ChildContent
 	</InputRadioGroup>
 
+	@if (!string.IsNullOrEmpty(FormText))
+	{
+		<FormText>
+			@FormText
+		</FormText>
+	}
+
 	<FieldValidationMessage For="ValueExpression"/>
 </fieldset>

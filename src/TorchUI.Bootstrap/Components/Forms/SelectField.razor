@@ -41,5 +41,12 @@
 		@ChildContent
 	</InputSelect>
 
+	@if (!string.IsNullOrEmpty(FormText))
+	{
+		<FormText>
+			@FormText
+		</FormText>
+	}
+
 	<FieldValidationMessage For="ValueExpression"/>
 </TorchComponentBase>

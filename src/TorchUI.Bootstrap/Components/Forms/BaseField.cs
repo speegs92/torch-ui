@@ -29,6 +29,11 @@ public class BaseField<TValue> : TorchComponentBase
 	protected string Id => InputId ?? _fallbackId;
 
 	/// <summary>
+	/// The calculated ID of the form description text
+	/// </summary>
+	protected string FormTextId => $"{Id}-form-text";
+
+	/// <summary>
 	/// The ID of the input
 	/// </summary>
 	[Parameter]
@@ -36,6 +41,12 @@ public class BaseField<TValue> : TorchComponentBase
 
 	[Parameter]
 	public string? Label { get; set; }
+
+	/// <summary>
+	/// The form helper text to display, if any
+	/// </summary>
+	[Parameter]
+	public string? FormText { get; set; }
 
 	/// <summary>
 	/// The value of the form field

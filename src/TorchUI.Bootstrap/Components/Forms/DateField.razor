@@ -23,5 +23,12 @@
 		id="@Id"
 		class="@FormControlClasses"/>
 
+	@if (!string.IsNullOrEmpty(FormText))
+	{
+		<FormText>
+			@FormText
+		</FormText>
+	}
+
 	<FieldValidationMessage For="@ValueExpression"/>
 </TorchComponentBase>
