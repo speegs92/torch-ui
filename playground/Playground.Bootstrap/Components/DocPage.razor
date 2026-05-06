@@ -1,0 +1,23 @@
+﻿<PageTitle>@Title</PageTitle>
+
+<h1>@Title</h1>
+
+<Interjection>
+	<strong>NOTE:</strong> If an example exists in the Bootstrap docs but not on this page, it is either not currently supported, or it is beyond the scope of TorchUI. You should still be able to manually create the Bootstrap example manually using a combination of CSS classes, attributes, and/or custom JavaScript, as normal. If an example contains JavaScript-centric examples, it will work with TorchUI's markup, but TorchUI doesn't demonstrate examples which contain custom JavaScript.
+</Interjection>
+
+<div @attributes="UserAttributes">
+	@ChildContent
+</div>
+
+@code {
+	[Parameter]
+    public required string Title { get; set; }
+
+	[Parameter]
+    public required RenderFragment ChildContent { get; set; }
+
+	[Parameter(CaptureUnmatchedValues = true)]
+	public Dictionary<string, object> UserAttributes { get; set; } = new();
+
+}

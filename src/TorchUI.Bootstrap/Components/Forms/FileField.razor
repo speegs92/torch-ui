@@ -1,0 +1,29 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+
+@inherits FormControl<Microsoft.AspNetCore.Http.IFormFile?>
+
+<TorchComponentBase
+	Tag="@Tag"
+	class="@CssBuilder.Build()">
+	<label
+		for="@Id"
+		class="form-label">
+		@ChildContent
+	</label>
+
+	<InputFile
+		@attributes="UserAttributes"
+		id="@Id"
+		name="@_fieldName"
+		class="@FormControlClasses"/>
+
+	@if (!string.IsNullOrEmpty(FormText))
+	{
+		<FormText>
+			@FormText
+		</FormText>
+	}
+
+	<FieldValidationMessage For="@ValueExpression"/>
+</TorchComponentBase>

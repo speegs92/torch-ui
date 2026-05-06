@@ -1,0 +1,83 @@
+﻿@page "/components/paginations"
+
+<DocPage Title="Paginations">
+	<DocSection
+		Subpath="components/pagination/#overview"
+		Title="Overview">
+		<Pagination>
+			<PageItem Href="#">Previous</PageItem>
+			<PageItem Href="#">1</PageItem>
+			<PageItem Href="#">2</PageItem>
+			<PageItem Href="#">3</PageItem>
+			<PageItem Href="#">Next</PageItem>
+		</Pagination>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/pagination/#working-with-icons"
+		Title="Working with icons">
+		<Pagination>
+			<PageItem
+				Href="#"
+				Label="Previous">
+				<span aria-hidden="true">&laquo;</span>
+			</PageItem>
+			<PageItem Href="#">1</PageItem>
+			<PageItem Href="#">2</PageItem>
+			<PageItem Href="#">3</PageItem>
+			<PageItem
+				Href="#"
+				Label="Next">
+				<span aria-hidden="true">&raquo;</span>
+			</PageItem>
+		</Pagination>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/pagination/#active"
+		Title="Active">
+		<Pagination>
+			<PageItem Href="#">Previous</PageItem>
+			<PageItem Href="#">1</PageItem>
+			<PageItem Href="#" Active>2</PageItem>
+			<PageItem Href="#">3</PageItem>
+			<PageItem Href="#">Next</PageItem>
+		</Pagination>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/pagination/#disabled"
+		Title="Disabled">
+		<Pagination>
+			<PageItem Href="#" Disabled>Previous</PageItem>
+			<PageItem Href="#">1</PageItem>
+			<PageItem Href="#" Active>2</PageItem>
+			<PageItem Href="#">3</PageItem>
+			<PageItem Href="#">Next</PageItem>
+		</Pagination>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/pagination/#sizing"
+		Title="Sizing">
+		<Pagination
+			Size="Large"
+			class="mb-2">
+			<PageItem Href="#">1</PageItem>
+			<PageItem Href="#">2</PageItem>
+			<PageItem Href="#">3</PageItem>
+		</Pagination>
+
+		<Pagination class="mb-2">
+			<PageItem Href="#">1</PageItem>
+			<PageItem Href="#">2</PageItem>
+			<PageItem Href="#">3</PageItem>
+		</Pagination>
+
+		<Pagination Size="Small">
+			<PageItem Href="#">1</PageItem>
+			<PageItem Href="#">2</PageItem>
+			<PageItem Href="#">3</PageItem>
+		</Pagination>
+	</DocSection>
+</DocPage>

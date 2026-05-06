@@ -1,0 +1,140 @@
+﻿@using System.Text.RegularExpressions
+@inherits LayoutComponentBase
+
+<Container Fluid>
+	<Row>
+		<Col
+			Xs="2"
+			Tag="nav"
+			class="border-end border-secondary-subtle">
+			<ul class="list-unstyled">
+				@foreach (var area in _areas)
+				{
+					<li class="pt-3">
+						@CreateHeader(area)
+
+						<ul class="list-unstyled">
+							@foreach (var page in area.Pages)
+							{
+								@CreatePageLink(area.Name, page)
+							}
+						</ul>
+					</li>
+				}
+			</ul>
+		</Col>
+
+		<Col Xs="10">
+			<Container
+				class="py-5"
+				style="max-width: 768px">
+				@Body
+			</Container>
+		</Col>
+	</Row>
+</Container>
+
+@code {
+
+	private readonly Area[] _areas =
+	[
+		new(
+			"layout",
+			"grid-fill",
+			Success,
+			[
+				"containers",
+				"grids",
+				"gutters"
+			]),
+		new(
+			"forms",
+			"ui-radios",
+			Primary,
+			[
+				"overview"
+			]),
+		new(
+			"components",
+			"menu-button-wide-fill",
+			Info,
+			[
+				"accordions",
+				"badges",
+				"breadcrumbs",
+				"buttons",
+				"button groups",
+				"cards",
+				"carousels",
+				"collapses",
+				"dropdowns",
+				"list groups",
+				"modals",
+				"navbars",
+				"navs & tabs",
+				"offcanvases",
+				"paginations"
+			])
+	];
+
+	private static string Slugify(string input)
+	{
+		input = input.Replace(" & ", "-");
+
+		return new Regex("\\s").Replace(input, "-");
+	}
+
+	private RenderFragment CreateHeader(Area area) => __builder =>
+	{
+		<h3 class="h5 text-capitalize">
+			<div class="row">
+				<div class="col-2">
+					<Icon
+						Name="@area.Icon"
+						Color="@area.Color"/>
+				</div>
+				<div class="col-10">
+					@area.Name
+				</div>
+			</div>
+		</h3>
+	};
+
+	private RenderFragment CreatePageLink(string area, string page) => __builder =>
+	{
+		<li>
+			<div class="row">
+				<div class="col-2">&nbsp;</div>
+				<div class="col-10">
+					<a
+						href="@($"/{area}/{Slugify(page)}")"
+						class="text-capitalize text-start py-1 btn menu-button-link">
+						@(page)
+					</a>
+				</div>
+			</div>
+
+		</li>
+	};
+
+	private class Area
+	{
+		public readonly string Name;
+		public readonly string Icon;
+		public readonly ThemeColor Color;
+		public readonly string[] Pages;
+
+		public Area(
+			string name,
+			string icon,
+			ThemeColor color,
+			string[] pages)
+		{
+			Name = name;
+			Icon = icon;
+			Color = color;
+			Pages = pages;
+		}
+	}
+
+}

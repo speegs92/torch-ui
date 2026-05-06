@@ -1,0 +1,23 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits TorchComponentBase
+
+<li class="@CssBuilder.Build()">
+	@if (Active || Disabled)
+	{
+		<span
+			class="page-link"
+			aria-label="@Label">
+			@ChildContent
+		</span>
+	}
+	else
+	{
+		<a
+			class="page-link"
+			href="@Href"
+			aria-label="@Label">
+			@ChildContent
+		</a>
+	}
+</li>

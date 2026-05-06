@@ -1,0 +1,26 @@
+﻿<div
+	class="@($"{Color.GetBgColorClass()}-subtle {Color.GetTextColorClass()}-emphasis my-5 p-4 border-{Color.ToString().ToLowerInvariant()} border-start border-5")">
+	@if (!OmitWrapper)
+	{
+		<p class="mb-0">
+			@ChildContent
+		</p>
+	}
+	else
+	{
+		@ChildContent
+	}
+</div>
+
+@code {
+
+	[Parameter]
+	public ThemeColor Color { get; set; } = ThemeColor.Info;
+
+	[Parameter]
+	public required RenderFragment ChildContent { get; set; }
+
+	[Parameter]
+	public bool OmitWrapper { get; set; }
+
+}

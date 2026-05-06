@@ -1,0 +1,189 @@
+﻿@page "/layout/gutters"
+
+<DocPage
+	Title="Gutters"
+	class="grid-page">
+	<DocSection
+		Subpath="layout/gutters/#horizontal-gutters"
+		Title="Horizontal gutters">
+		<Container class="px-4 text-center mb-3">
+			<Row XsGutterX="5">
+				<Col>
+					<div class="p-3">
+						Custom element padding
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Custom element padding
+					</div>
+				</Col>
+			</Row>
+		</Container>
+		
+		<Container class="overflow-hidden text-center">
+			<Row XsGutterX="5">
+				<Col>
+					<div class="p-3">
+						Custom element padding
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Custom element padding
+					</div>
+				</Col>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/gutters/#vertical-gutters"
+		Title="Vertical gutters">
+		<Container class="overflow-hidden text-center">
+			<Row XsGutterY="5">
+				<Col Xs="6">
+					<div class="p-3">
+						Custom column padding
+					</div>
+				</Col>
+				<Col Xs="6">
+					<div class="p-3">
+						Custom column padding
+					</div>
+				</Col>
+				<Col Xs="6">
+					<div class="p-3">
+						Custom column padding
+					</div>
+				</Col>
+				<Col Xs="6">
+					<div class="p-3">
+						Custom column padding
+					</div>
+				</Col>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/gutters/#horizontal--vertical-gutters"
+		Title="Horizontal & vertical gutters">
+		<Container class="text-center">
+			<Row XsGutter="2">
+				<Col Xs="6">
+					<div class="p-3">
+						Custom column padding
+					</div>
+				</Col>
+				<Col Xs="6">
+					<div class="p-3">
+						Custom column padding
+					</div>
+				</Col>
+				<Col Xs="6">
+					<div class="p-3">
+						Custom column padding
+					</div>
+				</Col>
+				<Col Xs="6">
+					<div class="p-3">
+						Custom column padding
+					</div>
+				</Col>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/gutters/#row-columns-gutters"
+		Title="Row columns gutters">
+		<Container class="text-center">
+			<Row
+				Xs="2"
+				Lg="5"
+				XsGutter="2"
+				LgGutter="3">
+				<Col>
+					<div class="p-3">
+						Row column
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Row column
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Row column
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Row column
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Row column
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Row column
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Row column
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Row column
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Row column
+					</div>
+				</Col>
+				<Col>
+					<div class="p-3">
+						Row column
+					</div>
+				</Col>
+			</Row>
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/gutters/#no-gutters"
+		Title="No gutters">
+		<Row
+			XsGutter="0"
+			class="text-center">
+			<Col
+				Xs="null"
+				Sm="6"
+				Md="8">
+				<div>.col-sm-6 .col-md-8</div>
+			</Col>
+			<Col
+				Xs="null"
+				Sm="6"
+				Md="4">
+				<div>.col-sm-6 .col-md-4</div>
+			</Col>
+		</Row>
+	</DocSection>
+</DocPage>
+
+<style>
+	.grid-page .row > div > div {
+		background: color-mix(in srgb, var(--bs-indigo), transparent 85%);
+		border: 1px solid var(--bs-indigo);
+		padding: .5rem;
+	}
+</style>

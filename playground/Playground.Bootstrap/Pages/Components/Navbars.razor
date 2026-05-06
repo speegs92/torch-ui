@@ -1,0 +1,191 @@
+﻿@page "/components/navbars"
+
+<DocPage Title="Navbars">
+	<DocSection
+		Subpath="components/navbar/#supported-content"
+		Title="Supported content">
+		<Navbar
+			ExpandOn="Lg"
+			class="bg-body-tertiary">
+			<Container Fluid>
+				<NavbarBrand Href="#">Navbar</NavbarBrand>
+				<NavbarToggler Target="#navbarSupportedContent"/>
+
+				<NavbarCollapse id="navbarSupportedContent">
+					<NavbarNav class="me-auto mb-2 mb-lg-0">
+						<NavItem>
+							<NavLink
+								Href="#"
+								aria-current="page"
+								class="active">
+								Home
+							</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink Href="#">Link</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink Href="#">Dropdown</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink Href="#" Disabled>Disabled</NavLink>
+						</NavItem>
+					</NavbarNav>
+
+					<form class="d-flex" role="search">
+						<input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+						<Btn Color="Success" Outlined type="submit">Search</Btn>
+					</form>
+				</NavbarCollapse>
+			</Container>
+		</Navbar>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/navbar/#text"
+		Title="Supported content - Brand - Text">
+		<Navbar class="bg-body-tertiary mb-2">
+			<Container Fluid>
+				<NavbarBrand Href="#">Navbar</NavbarBrand>
+			</Container>
+		</Navbar>
+
+		<Navbar class="bg-body-tertiary">
+			<Container Fluid>
+				<NavbarBrand Href="#" class="mb-0 h1">Navbar</NavbarBrand>
+			</Container>
+		</Navbar>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/navbar/#image"
+		Title="Supported content - Brand - Image">
+		<Navbar class="bg-body-tertiary">
+			<Container Fluid>
+				<NavbarBrand Href="#">
+					<img
+						src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg"
+						alt="Bootstrap"
+						width="30"
+						height="24"/>
+				</NavbarBrand>
+			</Container>
+		</Navbar>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/navbar/#image-and-text"
+		Title="Supported content - Brand - Image and text">
+		<Navbar class="bg-body-tertiary">
+			<Container Fluid>
+				<NavbarBrand Href="#">
+					<img
+						src="https://getbootstrap.com/docs/5.3/assets/brand/bootstrap-logo.svg"
+						alt="Bootstrap"
+						width="30"
+						height="24"
+						class="d-inline-block align-text-top"/>
+					Bootstrap
+				</NavbarBrand>
+			</Container>
+		</Navbar>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/navbar/#nav"
+		Title="Supported content - nav">
+		<Navbar
+			ExpandOn="Lg"
+			class="bg-body-tertiary mb-2">
+			<Container Fluid>
+				<NavbarBrand Href="#">Navbar</NavbarBrand>
+				<NavbarToggler/>
+
+				<NavbarCollapse>
+					<NavbarNav>
+						<NavItem>
+							<NavLink
+								Href="#"
+								aria-current="page"
+								class="active">
+								Home
+							</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink Href="#">Features</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink Href="#">Pricing</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink Href="#" Disabled>Disabled</NavLink>
+						</NavItem>
+					</NavbarNav>
+				</NavbarCollapse>
+			</Container>
+		</Navbar>
+
+		<Navbar
+			ExpandOn="Lg"
+			class="bg-body-tertiary">
+			<Container Fluid>
+				<NavbarBrand Href="#">Navbar</NavbarBrand>
+				<NavbarToggler/>
+
+				<NavbarCollapse>
+					<NavbarNav Tag="div">
+						<NavLink
+							Href="#"
+							aria-current="page"
+							class="active">
+							Home
+						</NavLink>
+						<NavLink Href="#">Features</NavLink>
+						<NavLink Href="#">Pricing</NavLink>
+						<NavLink Href="#" Disabled>Disabled</NavLink>
+					</NavbarNav>
+				</NavbarCollapse>
+			</Container>
+		</Navbar>
+	</DocSection>
+
+	<DocSection
+		Subpath=""
+		Title="Supported content - Text">
+		<Navbar class="bg-body-tertiary mb-2">
+			<Container Fluid>
+				<NavbarText>Navbar text with an inline element</NavbarText>
+			</Container>
+		</Navbar>
+
+		<Navbar
+			ExpandOn="Lg"
+			class="bg-body-tertiary mb-2">
+			<Container Fluid>
+				<NavbarBrand Href="#">Navbar w/ text</NavbarBrand>
+				<NavbarToggler/>
+
+				<NavbarCollapse>
+					<NavbarNav class="me-auto mb-2 mb-lg-0">
+						<NavItem>
+							<NavLink
+								Href="#"
+								aria-current="page"
+								class="active">
+								Home
+							</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink Href="#">Features</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink Href="#">Pricing</NavLink>
+						</NavItem>
+					</NavbarNav>
+				</NavbarCollapse>
+
+				<NavbarText>Navbar text with an inline element</NavbarText>
+			</Container>
+		</Navbar>
+	</DocSection>
+</DocPage>

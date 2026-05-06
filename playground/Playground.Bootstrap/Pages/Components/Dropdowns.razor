@@ -1,0 +1,341 @@
+﻿@page "/components/dropdowns"
+
+<DocPage Title="Dropdowns">
+	<DocSection
+		Subpath="components/dropdowns/#single-button"
+		Title="Examples - Single button">
+		<Dropdown
+			Text="Dropdown button"
+			Color="Secondary"
+			class="mb-2">
+			<DropdownItemLink Href="#">Action</DropdownItemLink>
+			<DropdownItemLink Href="#">Another action</DropdownItemLink>
+			<DropdownItemLink Href="#">Something else here</DropdownItemLink>
+		</Dropdown>
+
+		<div class="d-flex">
+			@foreach (var color in Enum.GetValues<ThemeColor>()[..^2])
+			{
+				<Dropdown class="me-2">
+					<ToggleBtn
+						Color="color"
+						Toggle="Toggle.Dropdown">
+						@color.ToString()
+					</ToggleBtn>
+					<DropdownMenu>
+						<DropdownItemLink Href="#">Action</DropdownItemLink>
+						<DropdownItemLink Href="#">Another action</DropdownItemLink>
+						<DropdownItemLink Href="#">Something else here</DropdownItemLink>
+						<DropdownDivider/>
+						<DropdownItemLink Href="#">Separated link</DropdownItemLink>
+					</DropdownMenu>
+				</Dropdown>
+			}
+		</div>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#split-button"
+		Title="Examples - Split button">
+		<SplitDropdown
+			Text="Split ropdown button"
+			Color="Secondary"
+			class="mb-2">
+			<DropdownItemLink Href="#">Action</DropdownItemLink>
+			<DropdownItemLink Href="#">Another action</DropdownItemLink>
+			<DropdownItemLink Href="#">Something else here</DropdownItemLink>
+		</SplitDropdown>
+
+		<div class="d-flex">
+			@foreach (var color in Enum.GetValues<ThemeColor>()[..^2])
+			{
+				<SplitDropdown class="me-2">
+					<Btn Color="color">@color.ToString()</Btn>
+					<DropdownToggleSplitBtn Color="color"/>
+
+					<DropdownMenu>
+						<DropdownItemLink Href="#">Action</DropdownItemLink>
+						<DropdownItemLink Href="#">Another action</DropdownItemLink>
+						<DropdownItemLink Href="#">Something else here</DropdownItemLink>
+						<DropdownDivider/>
+						<DropdownItemLink Href="#">Separated link</DropdownItemLink>
+					</DropdownMenu>
+				</SplitDropdown>
+			}
+		</div>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#sizing"
+		Title="Sizing">
+		<div class="d-flex mb-2">
+			<Dropdown
+				Color="Secondary"
+				Size="Large"
+				Text="Large button"
+				class="me-2">
+				<DropdownItemLink Href="#">Action</DropdownItemLink>
+				<DropdownItemLink Href="#">Another action</DropdownItemLink>
+				<DropdownItemLink Href="#">Something else here</DropdownItemLink>
+				<DropdownDivider/>
+				<DropdownItemLink Href="#">Separated link</DropdownItemLink>
+			</Dropdown>
+
+			<SplitDropdown
+				Color="Secondary"
+				Size="Large"
+				Text="Large split button">
+				<DropdownItemLink Href="#">Action</DropdownItemLink>
+				<DropdownItemLink Href="#">Another action</DropdownItemLink>
+				<DropdownItemLink Href="#">Something else here</DropdownItemLink>
+				<DropdownDivider/>
+				<DropdownItemLink Href="#">Separated link</DropdownItemLink>
+			</SplitDropdown>
+		</div>
+
+		<div class="d-flex">
+			<Dropdown
+				Color="Secondary"
+				Size="Small"
+				Text="Small button"
+				class="me-2">
+				<DropdownItemLink Href="#">Action</DropdownItemLink>
+				<DropdownItemLink Href="#">Another action</DropdownItemLink>
+				<DropdownItemLink Href="#">Something else here</DropdownItemLink>
+				<DropdownDivider/>
+				<DropdownItemLink Href="#">Separated link</DropdownItemLink>
+			</Dropdown>
+
+			<SplitDropdown
+				Color="Secondary"
+				Size="Small"
+				Text="Small split button">
+				<DropdownItemLink Href="#">Action</DropdownItemLink>
+				<DropdownItemLink Href="#">Another action</DropdownItemLink>
+				<DropdownItemLink Href="#">Something else here</DropdownItemLink>
+				<DropdownDivider/>
+				<DropdownItemLink Href="#">Separated link</DropdownItemLink>
+			</SplitDropdown>
+		</div>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#centered"
+		Title="Directions - Centered">
+		<Dropdown
+			Color="Secondary"
+			Text="Centered dropdown"
+			Center>
+			<DropdownItemLink Href="#">
+				Action
+			</DropdownItemLink>
+			<DropdownItemLink Href="#">
+				Action 2
+			</DropdownItemLink>
+			<DropdownItemLink Href="#">
+				Action 3
+			</DropdownItemLink>
+		</Dropdown>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#dropup"
+		Title="Directions - Dropup">
+		<div class="d-flex">
+			<Dropdown
+				Color="Secondary"
+				Text="Dropup"
+				Placement="Top"
+				class="me-2">
+				<DropdownItemLink Href="#">
+					Action
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 2
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 3
+				</DropdownItemLink>
+			</Dropdown>
+
+			<SplitDropdown
+				Color="Secondary"
+				Text="Split dropup"
+				Placement="Top">
+				<DropdownItemLink Href="#">
+					Action
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 2
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 3
+				</DropdownItemLink>
+			</SplitDropdown>
+		</div>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#dropup-centered"
+		Title="Directions - Dropup centered">
+		<Dropdown
+			Color="Secondary"
+			Text="Dropup centered"
+			Placement="Top"
+			Center>
+			<DropdownItemLink Href="#">
+				Action
+			</DropdownItemLink>
+			<DropdownItemLink Href="#">
+				Action 2
+			</DropdownItemLink>
+			<DropdownItemLink Href="#">
+				Action 3
+			</DropdownItemLink>
+		</Dropdown>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#dropend"
+		Title="Directions - Dropend">
+		<div class="d-flex">
+			<Dropdown
+				Color="Secondary"
+				Text="Dropend"
+				Placement="End"
+				class="me-2">
+				<DropdownItemLink Href="#">
+					Action
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 2
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 3
+				</DropdownItemLink>
+			</Dropdown>
+
+			<SplitDropdown
+				Color="Secondary"
+				Text="Split dropend"
+				Placement="End">
+				<DropdownItemLink Href="#">
+					Action
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 2
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 3
+				</DropdownItemLink>
+			</SplitDropdown>
+		</div>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#dropstart"
+		Title="Directions - Dropstart">
+		<div class="d-flex">
+			<Dropdown
+				Color="Secondary"
+				Text="Dropstart"
+				Placement="Start"
+				class="me-2">
+				<DropdownItemLink Href="#">
+					Action
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 2
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 3
+				</DropdownItemLink>
+			</Dropdown>
+
+			<SplitDropdown
+				Color="Secondary"
+				Text="Split dropstart"
+				Placement="Start">
+				<DropdownItemLink Href="#">
+					Action
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 2
+				</DropdownItemLink>
+				<DropdownItemLink Href="#">
+					Action 3
+				</DropdownItemLink>
+			</SplitDropdown>
+		</div>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#menu-items"
+		Title="Menu items">
+		<Dropdown
+			Color="Secondary"
+			Text="Dropdown"
+			class="mb-2">
+			<DropdownItemButton>Action</DropdownItemButton>
+			<DropdownItemButton>Another action</DropdownItemButton>
+			<DropdownItemButton>Something else here</DropdownItemButton>
+		</Dropdown>
+
+		<DropdownMenu class="d-block position-static">
+			<DropdownItemText>Dropdown item text</DropdownItemText>
+			<DropdownItemLink Href="#">Action</DropdownItemLink>
+			<DropdownItemLink Href="#">Another action</DropdownItemLink>
+			<DropdownItemLink Href="#">Something else here</DropdownItemLink>
+		</DropdownMenu>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#active"
+		Title="Menu items - Active">
+		<DropdownMenu class="d-block position-static">
+			<DropdownItemLink Href="#">Regular link</DropdownItemLink>
+			<DropdownItemLink
+				Href="#"
+				Active
+				aria-current="true">
+				Active link
+			</DropdownItemLink>
+			<DropdownItemLink Href="#">Another link</DropdownItemLink>
+		</DropdownMenu>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#disabled"
+		Title="Menu items - Disabled">
+		<DropdownMenu class="d-block position-static">
+			<DropdownItemLink Href="#">Regular link</DropdownItemLink>
+			<DropdownItemLink
+				Href="#"
+				Disabled>
+				Disabled link
+			</DropdownItemLink>
+			<DropdownItemButton Disabled>Disabled button</DropdownItemButton>
+			<DropdownItemLink Href="#">Another link</DropdownItemLink>
+		</DropdownMenu>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/dropdowns/#headers"
+		Title="Menu content - Headers">
+		<DropdownMenu class="d-block position-static">
+			<DropdownHeader Tag="h6">Dropdown header</DropdownHeader>
+			<DropdownItemLink Href="#">Action</DropdownItemLink>
+			<DropdownItemLink Href="#">Another action</DropdownItemLink>
+		</DropdownMenu>
+	</DocSection>
+
+	<DocSection
+		Subpath=""
+		Title="Menu content - Dividers">
+		<DropdownMenu class="d-block position-static">
+			<DropdownItemLink Href="#">Action</DropdownItemLink>
+			<DropdownItemLink Href="#">Another action</DropdownItemLink>
+			<DropdownItemLink Href="#">Something else here</DropdownItemLink>
+		</DropdownMenu>
+	</DocSection>
+</DocPage>

@@ -1,0 +1,39 @@
+﻿@page "/layout/containers"
+
+<DocPage Title="Containers">
+	<DocSection
+		Subpath="layout/containers/#default-container"
+		Title="Default container">
+		<Container>
+			&lt;-- Content here --&gt;
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/containers/#responsive-containers"
+		Title="Responsive containers">
+		<Container FullWidthUntil="Sm">
+			100% wide until small breakpoint
+		</Container>
+		<Container FullWidthUntil="Md">
+			100% wide until medium breakpoint
+		</Container>
+		<Container FullWidthUntil="Lg">
+			100% wide until large breakpoint
+		</Container>
+		<Container FullWidthUntil="Xl">
+			100% wide until extra large breakpoint
+		</Container>
+		<Container FullWidthUntil="Xxl">
+			100% wide until extra extra large breakpoint
+		</Container>
+	</DocSection>
+
+	<DocSection
+		Subpath="layout/containers/#fluid-containers"
+		Title="Fluid containers">
+		<Container Fluid>
+			...
+		</Container>
+	</DocSection>
+</DocPage>

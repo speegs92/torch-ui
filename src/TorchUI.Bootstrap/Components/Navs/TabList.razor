@@ -1,0 +1,23 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits NavBase
+
+<CascadingValue Value="@this">
+	<Nav
+		Fill="Fill"
+		Justified="Justified"
+		Pills="Pills"
+		Tabs="Tabs"
+		Underline="Underline"
+		role="tablist"
+		@attributes="UserAttributes">
+		@foreach (var pane in _children)
+		{
+			@pane.RenderActivator()
+		}
+	</Nav>
+
+	<div class="tab-content">
+		@ChildContent
+	</div>
+</CascadingValue>

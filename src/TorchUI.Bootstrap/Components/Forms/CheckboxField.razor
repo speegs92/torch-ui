@@ -1,0 +1,27 @@
+﻿@namespace TorchUI.Bootstrap.Components
+
+@inherits BaseField<TValue>
+@typeparam TValue
+
+<TorchComponentBase
+	Tag="@Tag"
+	@attributes="UserAttributes"
+	class="@CssBuilder.Build()">
+	<CheckboxFieldBase
+		Value="@Value"
+		id="@Id"
+		class="form-check-input"/>
+
+	<label
+		for="@Id"
+		class="form-check-label">
+		@if (!string.IsNullOrEmpty(Label))
+		{
+			@Label
+		}
+		else
+		{
+			@ChildContent
+		}
+	</label>
+</TorchComponentBase>

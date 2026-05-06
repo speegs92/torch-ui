@@ -1,0 +1,14 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits TorchComponentBase
+
+<TorchComponentBase
+	Tag="@Tag"
+	@attributes="UserAttributes"
+	class="@CssBuilder.Build()">
+	<div class="@CreateDialogCssClasses()">
+		<div class="modal-content">
+			@ChildContent
+		</div>
+	</div>
+</TorchComponentBase>

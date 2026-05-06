@@ -1,0 +1,22 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+
+@inherits TorchComponentBase
+
+<TorchComponentBase
+	Tag="@Tag"
+	class="@CssBuilder.Build()"
+	@attributes="UserAttributes">
+	@if (!string.IsNullOrEmpty(Href))
+	{
+		<NavLink
+			Href="@Href"
+			Disabled="Disabled">
+			@ChildContent
+		</NavLink>
+	}
+	else
+	{
+		@ChildContent
+	}
+</TorchComponentBase>

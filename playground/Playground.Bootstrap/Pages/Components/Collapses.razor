@@ -1,0 +1,106 @@
+﻿@page "/components/collapses"
+
+<DocPage Title="Collapse">
+	<DocSection
+		Subpath="components/collapse/#example"
+		Title="Example">
+		<p class="d-inline-flex gap-1">
+			<ToggleBtn
+				Color="Primary"
+				Toggle="Toggle.Collapse"
+				href="#collapseExample">
+				Link with href
+			</ToggleBtn>
+			<ToggleBtn
+				Color="Primary"
+				Toggle="Toggle.Collapse"
+				Target="#collapseExample">
+				Button with data-bs-target
+			</ToggleBtn>
+		</p>
+
+		<Collapse id="collapseExample">
+			<Card>
+				<CardBody>
+					Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+				</CardBody>
+			</Card>
+		</Collapse>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/collapse/#horizontal"
+		Title="Horizontal">
+		<p>
+			<ToggleBtn
+				Color="Primary"
+				Toggle="Toggle.Collapse"
+				Target="#collapseWidthExample">
+				Toggle width collapse
+			</ToggleBtn>
+		</p>
+
+		<div style="min-height: 120px;">
+			<Collapse
+				Horizontal
+				id="collapseWidthExample">
+				<Card style="width: 300px;">
+					<CardBody>
+						This is some placeholder content for a horizontal collapse. It’s hidden by default and shown when triggered.
+					</CardBody>
+				</Card>
+			</Collapse>
+		</div>
+	</DocSection>
+
+	<DocSection
+		Subpath=""
+		Title="Multiple toggles and targets">
+		<p class="d-inline-flex gap-1">
+			<ToggleBtn
+				Color="Primary"
+				Toggle="Toggle.Collapse"
+				href="#multiCollapseExample1">
+				Toggle first element
+			</ToggleBtn>
+			<ToggleBtn
+				Color="Primary"
+				Toggle="Toggle.Collapse"
+				Target="#multiCollapseExample2">
+				Toggle second element
+			</ToggleBtn>
+			<ToggleBtn
+				Color="Primary"
+				Toggle="Toggle.Collapse"
+				Target=".multi-collapse">
+				Toggle both elements
+			</ToggleBtn>
+		</p>
+
+		<Row>
+			<Col>
+				<Collapse
+					class="multi-collapse"
+					id="multiCollapseExample1">
+					<Card>
+						<CardBody>
+							Some placeholder content for the first collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+						</CardBody>
+					</Card>
+				</Collapse>
+			</Col>
+
+			<Col>
+				<Collapse
+					class="multi-collapse"
+					id="multiCollapseExample2">
+					<Card>
+						<CardBody>
+							Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.
+						</CardBody>
+					</Card>
+				</Collapse>
+			</Col>
+		</Row>
+	</DocSection>
+</DocPage>

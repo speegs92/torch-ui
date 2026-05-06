@@ -1,0 +1,11 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits TorchComponentBase
+
+<nav
+	@attributes="UserAttributes"
+	aria-label="@Label">
+	<ol class="breadcrumb">
+		@ChildContent
+	</ol>
+</nav>

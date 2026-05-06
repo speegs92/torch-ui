@@ -1,0 +1,104 @@
+﻿@page "/components/badges"
+
+<DocPage Title="Badges">
+	<DocSection
+		Subpath="components/badge/#headings"
+		Title="Headings">
+		<h1>
+			Example heading
+			<Badge Color="Secondary">
+				New
+			</Badge>
+		</h1>
+		<h2>
+			Example heading
+			<Badge Color="Secondary">
+				New
+			</Badge>
+		</h2>
+		<h3>
+			Example heading
+			<Badge Color="Secondary">
+				New
+			</Badge>
+		</h3>
+		<h4>
+			Example heading
+			<Badge Color="Secondary">
+				New
+			</Badge>
+		</h4>
+		<h5>
+			Example heading
+			<Badge Color="Secondary">
+				New
+			</Badge>
+		</h5>
+		<h6>
+			Example heading
+			<Badge Color="Secondary">
+				New
+			</Badge>
+		</h6>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/badge/#buttons"
+		Title="Buttons">
+		<Btn Color="Primary">
+			Notifications
+			<Badge Color="Secondary">
+				4
+			</Badge>
+		</Btn>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/badge/#positioned"
+		Title="Positioned">
+		<Btn
+			Color="Primary"
+			class="position-relative">
+			Inbox
+			<Badge
+				Color="Danger"
+				Pill
+				class="position-absolute top-0 start-100 translate-middle">
+				99+
+				<span class="visually-hidden">
+					unread messages
+				</span>
+			</Badge>
+		</Btn>
+
+		<Interjection>
+			<strong>FYI:</strong> The "red circle" example in the Bootstrap docs is not included because, as useful as the example might be for some designs, it is not a badge as such - it doesn't even use the <code>.badge</code> class.
+		</Interjection>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/badge/#background-colors"
+		Title="Background colors">
+		<Badge Color="Primary">Primary</Badge>
+		<Badge Color="Secondary">Secondary</Badge>
+		<Badge Color="Success">Success</Badge>
+		<Badge Color="Danger">Danger</Badge>
+		<Badge Color="Warning">Warning</Badge>
+		<Badge Color="Info">Info</Badge>
+		<Badge Color="Light">Light</Badge>
+		<Badge Color="Dark">Dark</Badge>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/badge/#pill-badges"
+		Title="Pill badges">
+		<Badge Color="Primary" Pill>Primary</Badge>
+		<Badge Color="Secondary" Pill>Secondary</Badge>
+		<Badge Color="Success" Pill>Success</Badge>
+		<Badge Color="Danger" Pill>Danger</Badge>
+		<Badge Color="Warning" Pill>Warning</Badge>
+		<Badge Color="Info" Pill>Info</Badge>
+		<Badge Color="Light" Pill>Light</Badge>
+		<Badge Color="Dark" Pill>Dark</Badge>
+	</DocSection>
+</DocPage>

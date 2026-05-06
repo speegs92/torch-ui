@@ -1,0 +1,111 @@
+﻿@page "/components/button-groups"
+
+<DocPage Title="Button groups">
+	<DocSection
+		Subpath="components/button-group/#basic-example"
+		Title="Basic example">
+		<BtnGroup Label="Basic example">
+			<Btn Color="Primary">Left</Btn>
+			<Btn Color="Primary">Middle</Btn>
+			<Btn Color="Primary">Right</Btn>
+		</BtnGroup>
+
+		<Interjection>
+			<strong>FYI:</strong> You can either provide the <code>Label</code> parameter or directly supply the <code>aria-label</code> if you prefer. An existing <code>aria-label</code> will take precedence over the <code>Label</code> parameter, so you won't accidentally overwrite your <code>aria-label</code>.
+		</Interjection>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/button-group/#mixed-styles"
+		Title="Mixed styles">
+		<BtnGroup Label="Basic mixed styles example">
+			<Btn Color="Danger">Left</Btn>
+			<Btn Color="Warning">Middle</Btn>
+			<Btn Color="Success">Right</Btn>
+		</BtnGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/button-group/#outlined-styles"
+		Title="Outlined styles">
+		<BtnGroup>
+			<Btn Color="Primary" Outlined>Left</Btn>
+			<Btn Color="Primary" Outlined>Middle</Btn>
+			<Btn Color="Primary" Outlined>Right</Btn>
+		</BtnGroup>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/button-group/#button-toolbar"
+		Title="Button toolbar">
+		<BtnToolbar>
+			<BtnGroup
+				Label="First group"
+				class="me-2">
+				<Btn Color="Primary">1</Btn>
+				<Btn Color="Primary">2</Btn>
+				<Btn Color="Primary">3</Btn>
+				<Btn Color="Primary">4</Btn>
+			</BtnGroup>
+
+			<BtnGroup
+				Label="Second group"
+				class="me-2">
+				<Btn Color="Secondary">5</Btn>
+				<Btn Color="Secondary">6</Btn>
+				<Btn Color="Secondary">7</Btn>
+			</BtnGroup>
+
+			<BtnGroup Label="Third group">
+				<Btn Color="Info">8</Btn>
+			</BtnGroup>
+		</BtnToolbar>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/button-group/#sizing"
+		Title="Sizing">
+		<BtnGroup
+			Size="Large"
+			Label="Large button group"
+			class="my-1">
+			<Btn Color="Primary" Outlined>Left</Btn>
+			<Btn Color="Primary" Outlined>Middle</Btn>
+			<Btn Color="Primary" Outlined>Right</Btn>
+		</BtnGroup><br/>
+
+		<BtnGroup
+			Label="Default button group"
+			class="my-1">
+			<Btn Color="Primary" Outlined>Left</Btn>
+			<Btn Color="Primary" Outlined>Middle</Btn>
+			<Btn Color="Primary" Outlined>Right</Btn>
+		</BtnGroup><br/>
+
+		<BtnGroup
+			Size="Small"
+			Label="Small button group"
+			class="my-1">
+			<Btn Color="Primary" Outlined>Left</Btn>
+			<Btn Color="Primary" Outlined>Middle</Btn>
+			<Btn Color="Primary" Outlined>Right</Btn>
+		</BtnGroup>
+
+		<Interjection>
+			<strong>Be aware:</strong> you can explicitly supply <code>Size="Size.Medium"</code> if you wish, but this value is ignored if present.
+		</Interjection>
+	</DocSection>
+
+	<DocSection
+		Subpath="components/button-group/#vertical-variation"
+		Title="Vertical variation">
+		<BtnGroup
+			Label="Vertical button group"
+			Vertical>
+			<Btn Color="Primary">Button</Btn>
+			<Btn Color="Primary">Button</Btn>
+			<Btn Color="Primary">Button</Btn>
+			<Btn Color="Primary">Button</Btn>
+		</BtnGroup>
+	</DocSection>
+</DocPage>

@@ -1,0 +1,25 @@
+﻿<div class="mt-5 pb-4 border-bottom border-1 border-dark-subtle">
+	<h2 class="mb-3">
+		Bootstrap equivalent: 
+		<a
+			href="@($"https://www.getbootstrap.com/docs/5.3/{Subpath}")"
+			target="_blank">
+			@Title
+		</a>
+	</h2>
+
+	@ChildContent
+</div>
+   
+@code {
+
+	[Parameter]
+    public required string Subpath { get; set; }
+
+	[Parameter]
+    public required string Title { get; set; }
+
+	[Parameter]
+    public required RenderFragment ChildContent { get; set; }
+
+}

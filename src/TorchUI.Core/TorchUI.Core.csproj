@@ -27,6 +27,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.15"/>
+		<PackageReference Include="Microsoft.AspNetCore.Http" Version="2.3.9"/>
 	</ItemGroup>
 
 </Project>

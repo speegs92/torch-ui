@@ -1,0 +1,15 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+@inherits TorchComponentBase
+
+<CascadingValue
+	TValue="string"
+	Value="@_id"
+	Name="@nameof(AccordionItem.AccordionId)">
+	<CascadingValue
+		TValue="bool"
+		Value="@AlwaysOpen"
+		Name="@nameof(AccordionItem.AccordionAlwaysOpen)">
+		@BuildHtml()
+	</CascadingValue>
+</CascadingValue>

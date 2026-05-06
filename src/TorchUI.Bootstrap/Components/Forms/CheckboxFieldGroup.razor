@@ -1,0 +1,36 @@
+﻿@* ReSharper disable once CheckNamespace *@
+@namespace TorchUI.Bootstrap.Components
+
+@inherits BaseField<IEnumerable<TValue>?>
+@typeparam TValue
+
+<fieldset @attributes="UserAttributes">
+	@if (!string.IsNullOrEmpty(Label))
+	{
+		<legend>@Label</legend>
+	}
+
+	<InputCheckboxGroup
+		Value="@Value"
+		ValueChanged="ValueChanged"
+		ValueExpression="ValueExpression">
+		@if (Options is not null && CheckboxTemplate is not null)
+		{
+			foreach (var option in Options)
+			{
+				@CheckboxTemplate(option)
+			}
+		}
+
+		@ChildContent
+	</InputCheckboxGroup>
+
+	@if (!string.IsNullOrEmpty(FormText))
+	{
+		<FormText>
+			@FormText
+		</FormText>
+	}
+
+	<FieldValidationMessage For="ValueExpression"/>
+</fieldset>
