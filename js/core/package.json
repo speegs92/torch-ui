@@ -1,0 +1,26 @@
+{
+	"name": "@torchui/core",
+	"version": "0.1.0",
+	"description": "A vanilla JS library for building UI functionality in Blazor Static SSR websites",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"devDependencies": {
+		"@types/node": "22.14.0",
+		"typescript": "~6.0.2",
+		"vite": "^8.0.12"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/speegs92/torch-ui.git"
+	},
+	"author": "Christian LeVesque <christian@levesque.dev> (https://levesque.dev)",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/speegs92/torch-ui/issues"
+	},
+	"homepage": "https://torchui.com"
+}

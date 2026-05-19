@@ -19,5 +19,17 @@ _ReSharper.*
 **/coverage.xml
 **/coveragereport
 
+# Client
+node_modules
+package-lock.json
+
+logs
+.log*
+
+dist/
+*.js
+*.css
+*.map
+
 # OS
 .DS_Store
