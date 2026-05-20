@@ -1,4 +1,15 @@
-﻿// region Typography
+﻿// region Spacing
+
+// The spacer count isn't configurable because TorchUI's intended use case is for building Blazor plugins
+// so distributed code will be counting on this to stay the same
+$spacer-count: 16;
+
+// The spacer size IS configurable, however
+$spacer-size: 4px !default;
+
+// endregion
+
+// region Typography
 
 $font-family: Montserrat, sans-serif !default;
 
