@@ -1,0 +1,66 @@
+﻿@use '../mixins';
+@use '../variables';
+
+@include mixins.responsive using ($infix) {
+	@for $level from 0 through variables.$spacer-count {
+		$size: var(--spacer-#{$level});
+		$negative-size: var(--spacer-n#{$level});
+
+		.p#{$infix}-#{$level}, .px#{$infix}-#{$level}, .pl#{$infix}-#{$level} {
+			padding-left: $size;
+		}
+		.p#{$infix}-#{$level}, .px#{$infix}-#{$level}, .pr#{$infix}-#{$level} {
+			padding-right: $size;
+		}
+		.p#{$infix}-#{$level}, .py#{$infix}-#{$level}, .pt#{$infix}-#{$level} {
+			padding-top: $size;
+		}
+		.p#{$infix}-#{$level}, .py#{$infix}-#{$level}, .pb#{$infix}-#{$level} {
+			padding-bottom: $size;
+		}
+
+		.m#{$infix}-#{$level}, .mx#{$infix}-#{$level}, .ml#{$infix}-#{$level} {
+			margin-left: $size;
+		}
+		.m#{$infix}-#{$level}, .mx#{$infix}-#{$level}, .mr#{$infix}-#{$level} {
+			margin-right: $size;
+		}
+		.m#{$infix}-#{$level}, .my#{$infix}-#{$level}, .mt#{$infix}-#{$level} {
+			margin-top: $size;
+		}
+		.m#{$infix}-#{$level}, .my#{$infix}-#{$level}, .mb#{$infix}-#{$level} {
+			margin-bottom: $size;
+		}
+
+		@if $level > 0 {
+			.m#{$infix}-n#{$level} {
+				margin: $negative-size;
+			}
+			.mx#{$infix}-n#{$level}, .ml#{$infix}-n#{$level} {
+				margin-left: $negative-size;
+			}
+			.mx#{$infix}-n#{$level}, .mr#{$infix}-n#{$level} {
+				margin-right: $negative-size;
+			}
+			.my#{$infix}-n#{$level}, .mt#{$infix}-n#{$level} {
+				margin-top: $negative-size;
+			}
+			.my#{$infix}-n#{$level}, .mb#{$infix}-n#{$level} {
+				margin-bottom: $negative-size;
+			}
+		}
+	}
+
+	.m#{$infix}-auto, .mx#{$infix}-auto, .ml#{$infix}-auto {
+		margin-left: auto;
+	}
+	.m#{$infix}-auto, .mx#{$infix}-auto, .mr#{$infix}-auto {
+		margin-right: auto;
+	}
+	.m#{$infix}-auto, .my#{$infix}-auto, .mt#{$infix}-auto {
+		margin-top: auto;
+	}
+	.m#{$infix}-auto, .my#{$infix}-auto, .mb#{$infix}-auto {
+		margin-bottom: auto;
+	}
+}
