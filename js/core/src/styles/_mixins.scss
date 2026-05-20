@@ -1,0 +1,11 @@
+﻿@use 'variables';
+
+@mixin responsive() {
+	@content('');
+
+	@each $breakpoint, $width in variables.$breakpoints {
+		@media (min-width: #{$width}) {
+			@content('-#{$breakpoint}');
+		}
+	}
+}
